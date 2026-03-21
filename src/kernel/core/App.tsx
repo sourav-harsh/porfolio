@@ -1,14 +1,11 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import '../../assets/App.css'
-import {createContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import NotFound from "../../pages/404.tsx";
 import Homepage from "../../pages/Homepage.tsx";
-import type {AppContextType} from "../presentation";
+import {AppContext as AppContext1} from "./AppContext.tsx";
+import { Analytics } from '@vercel/analytics/react';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-// eslint-disable-next-line react-refresh/only-export-components
-export const AppContext = createContext<AppContextType>();
 
 function App() {
     const savedTheme = localStorage.getItem('theme')
@@ -25,14 +22,17 @@ function App() {
     };
 
     return (
-        <AppContext.Provider value={{ theme, switchTheme }}>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Homepage />} />
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
-            </BrowserRouter>
-        </AppContext.Provider>
+        <>
+            <AppContext1 value={{theme, switchTheme}}>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Homepage/>}/>
+                        <Route path="*" element={<NotFound/>}/>
+                    </Routes>
+                </BrowserRouter>
+            </AppContext1>
+            <Analytics/>
+        </>
     )
 }
 

@@ -1,9 +1,9 @@
 import {useContext, useEffect, useState} from "react";
-import {AppContext} from "../kernel/core/App.tsx";
 import Particles, {initParticlesEngine} from "@tsparticles/react";
 import {loadSlim} from "@tsparticles/slim";
 import Hero from "../kernel/presentation/components/sections/Hero.tsx";
 import type {ISourceOptions} from "@tsparticles/engine";
+import {AppContext} from "../kernel/core/AppContext.tsx";
 
 function Homepage() {
     const { theme, switchTheme } = useContext(AppContext);

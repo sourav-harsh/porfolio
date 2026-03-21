@@ -3,6 +3,7 @@ import {AppContext} from "../kernel/core/App.tsx";
 import Particles, {initParticlesEngine} from "@tsparticles/react";
 import {loadSlim} from "@tsparticles/slim";
 import Hero from "../kernel/presentation/components/sections/Hero.tsx";
+import type {ISourceOptions} from "@tsparticles/engine";
 
 function Homepage() {
     const { theme, switchTheme } = useContext(AppContext);
@@ -16,11 +17,7 @@ function Homepage() {
         });
     }, []);
 
-    const particlesLoaded = (container) => {
-        console.log(container);
-    };
-
-    const option = {
+    const option:ISourceOptions = {
         "autoPlay": true,
         "background": {
             "color": "",
@@ -58,9 +55,7 @@ function Homepage() {
                     "mode": "push"
                 },
                 "onDiv": {
-                    "selectors": {},
                     "enable": false,
-                    "mode": {},
                     "type": "circle"
                 },
                 "onHover": {
@@ -244,9 +239,7 @@ function Homepage() {
                 "close": true,
                 "fill": true,
                 "options": {},
-                "type": {}
             },
-            "groups": [],
             "move": {
                 "angle": {
                     "offset": 0,
@@ -535,7 +528,6 @@ function Homepage() {
     return (
         <>{init && <Particles
             id="tsparticles"
-            particlesLoaded={particlesLoaded}
             options={option}
         />}
             <div className="dark:bg-[url('/images/bg_portfolio.png')] bg-[url('/images/bg_portfolio_light.png')] min-h-screen bg-cover bg-center bg-no-repeat xl:p-5 p-3">

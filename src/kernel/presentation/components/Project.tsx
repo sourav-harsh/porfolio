@@ -1,6 +1,7 @@
 import { CiLink } from "react-icons/ci";
+import type {ProjectProps} from "./types.ts";
 
-function Project({ title, description, technologies, link, github }) {
+function Project({ title, description, technologies, link, github }: ProjectProps) {
     return (
         <div className="hover:bg-zinc-100 hover:dark:bg-zinc-900 transition-all duration-300 p-6 md:rounded-xl">
             <div className="flex gap-2 overflow-x-scroll py-2">

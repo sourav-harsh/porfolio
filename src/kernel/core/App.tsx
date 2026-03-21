@@ -3,11 +3,12 @@ import '../../assets/App.css'
 import {createContext, useEffect, useState} from "react";
 import NotFound from "../../pages/404.tsx";
 import Homepage from "../../pages/Homepage.tsx";
+import type {AppContextType} from "../presentation";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 // eslint-disable-next-line react-refresh/only-export-components
-export const AppContext = createContext();
+export const AppContext = createContext<AppContextType>();
 
 function App() {
     const savedTheme = localStorage.getItem('theme')

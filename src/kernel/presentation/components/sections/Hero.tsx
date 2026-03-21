@@ -8,8 +8,9 @@ import { IoMdMail } from "react-icons/io";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { TbBrandTelegram } from "react-icons/tb";
 import { FaCaretDown } from "react-icons/fa";
+import type {ToggleThemeProps} from "../types.ts";
 
-const Hero = ({switchTheme}) => {
+const Hero = ({switchTheme}:ToggleThemeProps) => {
     const handleLearningGoal = () => {
         const learningGoalDropdown = document.getElementById("learningGoalDropdown");
         learningGoalDropdown?.classList.toggle("hidden");

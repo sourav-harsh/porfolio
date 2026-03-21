@@ -27,7 +27,7 @@ const Hero = ({switchTheme}:ToggleThemeProps) => {
                 <div className="w-full dark:text-white text-black">
                     <div className="flex items-start justify-between">
                         <h2 className="md:text-2xl text-lg font-bold flex items-center gap-1">{info.main?.name} <MdVerified  color="#3366ff"/></h2>
-                        <div className="-mt-3">
+                        <div className="-mt-3 md:relative absolute -top-5 -right-5">
                             <ToggleTheme switchTheme={switchTheme}/>
                         </div>
                     </div>
@@ -45,18 +45,20 @@ const Hero = ({switchTheme}:ToggleThemeProps) => {
                             <div className="absolute top-8 right-0 w-48 h-full bg-black/50 hidden" id="learningGoalDropdown"></div>
                         </button>
                     </div>
-                    <div className="flex items-center gap-2 mt-5">
+                    <div className="flex items-center flex-wrap gap-2 mt-5">
                         <a className="px-4 md:py-1 py-1.5 bg-white rounded text-xs font-semibold flex items-center gap-1 text-black cursor-pointer group" href={`mailto:${info.main.email}`} ><IoMdMail size={18} className="group-hover:hidden"/> <TbBrandTelegram size={18} className="hidden group-hover:inline" /><p className="md:inline hidden">{info.main.sendMailBtnTxt}</p></a>
                         <a className="px-4 md:py-1.5 py-2.5 bg-gray-900/50 rounded text-xs font-normal flex items-center gap-3 hover:gap-5 ease-in-out transition-all cursor-pointer" href={info.main.resumeLink} target="_blank"><div className="flex items-center gap-1"><BsFiletypePdf /><p className="md:inline hidden">{info.main.resumeBtnTxt}</p></div> <div className="md:inline hidden"><MdOutlineFileDownload /></div></a>
-                        <button className="px-4 py-1 bg-blue-500 rounded text-xs font-normal flex items-center gap-1 relative cursor-pointer  md:hidden" onClick={handleLearningGoalMobileScreen}>
-                            <FaGraduationCap size={18} />
-
-                            <div className="border-l border-l-white pl-3 ml-3"><FaCaretDown /></div>
-                            <div className="absolute top-8 right-0 w-48 h-full bg-black/50 hidden" id="learningGoalDropdownMobileScreen"></div>
-                        </button>
                     </div>
                 </div>
             </div>
+            <button className="mt-2 dark:text-white text-black px-4 py-1 bg-blue-500 rounded text-xs font-normal flex items-center justify-between relative cursor-pointer w-full  md:hidden" onClick={handleLearningGoalMobileScreen}>
+                <div className="flex items-center gap-1">
+                <FaGraduationCap size={18} />
+                {info.main.learningGoalBtn}
+                </div>
+                <div className="border-l border-l-white pl-3 ml-3"><FaCaretDown /></div>
+                <div className="absolute top-8 right-0 w-48 h-full bg-black/50 hidden" id="learningGoalDropdownMobileScreen"></div>
+            </button>
         </div>
     );
 };

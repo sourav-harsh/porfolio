@@ -530,7 +530,7 @@ function Homepage() {
             id="tsparticles"
             options={option}
         />}
-            <div className="dark:bg-[url('/images/bg_portfolio.png')] bg-[url('/images/bg_portfolio_light.png')] min-h-screen bg-cover bg-center bg-no-repeat xl:p-5 p-3">
+            <div className="dark:bg-[url('/images/bg_portfolio.png')] bg-[url('/images/bg_portfolio_light.png')] min-h-screen min-w-screen bg-cover bg-center bg-no-repeat xl:p-5 p-3">
                 <div className="xl:w-[50rem] md:mx-auto h-full backdrop-blur-md dark:bg-black/25 bg-white/25 rounded-2xl">
 
                     <div className="grid md:grid-cols-2 grid-cols-1 gap-2 md:p-6 p-3">

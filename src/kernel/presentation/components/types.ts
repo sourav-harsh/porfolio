@@ -1,3 +1,5 @@
+import type {ReactNode} from "react";
+
 export type ProjectProps = {
     title: string;
     description: string;
@@ -8,4 +10,11 @@ export type ProjectProps = {
 
 export type ToggleThemeProps = {
     switchTheme: () => void;
+};
+
+export type MyComponentProps = {
+    children: ReactNode;
+    title?:string;
+    switchTheme?: () => void;
+    classes?: string;
 };

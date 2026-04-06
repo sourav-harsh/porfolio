@@ -1,2 +1,22 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme{
+    --animate-shine: shine 1s linear infinite;
+
+    @keyframes shine {
+        0% {
+            transform: translate(150%, 150%) rotate(90deg);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(-150%, -150%) rotate(90deg);
+        }
+    }
+}
+
+.title{
+    @apply md:text-lg text-lg font-bold
+}

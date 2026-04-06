@@ -4,10 +4,19 @@ import {loadSlim} from "@tsparticles/slim";
 import Hero from "../kernel/presentation/components/sections/Hero.tsx";
 import type {ISourceOptions} from "@tsparticles/engine";
 import {AppContext} from "../kernel/core/AppContext.tsx";
+import Footer from "../kernel/presentation/components/sections/Footer.tsx";
+import About from "../kernel/presentation/components/sections/About.tsx";
+import Container from "../kernel/presentation/components/shared/Container.tsx";
+import Social from "../kernel/presentation/components/sections/Social.tsx";
+import Expirence from "../kernel/presentation/components/sections/Expirence.tsx";
+import Education from "../kernel/presentation/components/sections/Education.tsx";
+import TechStack from "../kernel/presentation/components/sections/TechStack.tsx";
+import Certifications from "../kernel/presentation/components/sections/Certifications.tsx";
+import Projects from "../kernel/presentation/components/sections/Projects.tsx";
 
 function Homepage() {
-    const { theme, switchTheme } = useContext(AppContext);
-    const [ init, setInit ] = useState(false);
+    const {theme, switchTheme} = useContext(AppContext);
+    const [init, setInit] = useState(false);
 
     useEffect(() => {
         initParticlesEngine(async (engine) => {
@@ -17,7 +26,7 @@ function Homepage() {
         });
     }, []);
 
-    const option:ISourceOptions = {
+    const option: ISourceOptions = {
         "autoPlay": true,
         "background": {
             "color": "",
@@ -530,24 +539,39 @@ function Homepage() {
             id="tsparticles"
             options={option}
         />}
-            <div className="dark:bg-[url('/images/bg_portfolio.png')] bg-[url('/images/bg_portfolio_light.png')] min-h-screen min-w-screen bg-cover bg-center bg-no-repeat xl:p-5 p-3">
-                <div className="xl:w-[50rem] md:mx-auto h-full backdrop-blur-md dark:bg-black/25 bg-white/25 rounded-2xl">
+            <div
+                className="dark:bg-black bg-[#FFFDD0] dark:text-white text-black min-h-screen min-w-screen w-full bg-cover bg-center bg-no-repeat xl:p-5 p-3">
+                <div className="w-full">
+                    <div className="flex items-center justify-center w-full">
+                        <div className="w-[50rem] h-full rounded-2xl">
+                            <div
+                                className="grid md:grid-cols-2 grid-cols-1 gap-2 dark:text-white text-black">
+                                <div className="col-span-2 row-span-2">
+                                    <Hero switchTheme={switchTheme}/>
+                                </div>
+                                <div className="col-span-1 row-span-4 flex flex-col gap-2">
+                                    <About/>
+                                    <TechStack/>
+                                    <Projects/>
+                                </div>
+                                <div className="col-span-1 row-span-4 flex flex-col gap-2">
+                                    <Expirence/>
+                                    <Education/>
+                                    <Certifications/>
+                                    <Social/>
+                                </div>
 
-                    <div className="grid md:grid-cols-2 grid-cols-1 gap-2 md:p-6 p-3">
-                        <div className="col-span-2 row-span-2">
-                           <Hero switchTheme={switchTheme} />
-                        </div>
-                        <div className="col-span-1 dark:bg-black/30 bg-black/10 backdrop-blur-md rounded-2xl p-6">
-                            Card 1
-                        </div>
-                        <div className="col-span-1 dark:bg-black/30 bg-black/10 backdrop-blur-md rounded-2xl p-6">
-                            Card 2
-                        </div>
-                        <div className="col-span-2 dark:bg-black/30 bg-black/10 backdrop-blur-md rounded-2xl p-6">
-                            Wide Card
+                            </div>
+                            <div className="mt-2">
+                                <Container>
+                                    Wide Card
+                                </Container>
+                                <Footer/>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </>
     )

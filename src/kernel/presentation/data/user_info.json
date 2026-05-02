@@ -17,8 +17,12 @@
         "description": "Learning Spring Boot to build backend services.",
         "technologies": ""
       },{
-        "title": "Spring Boot",
-        "description": "Learning Spring Boot to build backend services.",
+        "title": "DevOps",
+        "description": "Learning DevOps to build backend services.",
+        "technologies": ""
+      },{
+        "title": "AI",
+        "description": "Learning AI to improve the application.",
         "technologies": ""
       }
     ]

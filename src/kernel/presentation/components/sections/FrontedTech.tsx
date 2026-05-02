@@ -6,7 +6,7 @@ function FrontedTech() {
     return (
         <div>
             <h3 className="text-base font-bold">Frontend Development</h3>
-            <div className="flex flex-wrap gap-2 mt-1">
+            <div className="flex flex-wrap gap-2 mt-2">
                 <ShineContainer classes="flex items-center gap-2">
                     <FaJava/>
                     ReactJS

@@ -545,16 +545,16 @@ function Homepage() {
                     <div className="flex items-center justify-center w-full">
                         <div className="w-[50rem] h-full rounded-2xl">
                             <div
-                                className="grid md:grid-cols-2 grid-cols-1 gap-2 dark:text-white text-black">
+                                className="grid md:grid-cols-2 grid-cols-1 gap-2 items-stretch justify-stretch dark:text-white text-black">
                                 <div className="col-span-2 row-span-2">
                                     <Hero switchTheme={switchTheme}/>
                                 </div>
-                                <div className="col-span-1 row-span-4 flex flex-col gap-2">
+                                <div className="col-span-1 row-span-4 flex flex-col gap-2 h-full">
                                     <About/>
                                     <TechStack/>
                                     <Projects/>
                                 </div>
-                                <div className="col-span-1 row-span-4 flex flex-col gap-2">
+                                <div className="col-span-1 row-span-4 flex flex-col gap-2 h-full">
                                     <Expirence/>
                                     <Education/>
                                     <Certifications/>
@@ -564,7 +564,7 @@ function Homepage() {
                             </div>
                             <div className="mt-2">
                                 <Container>
-                                    Wide Card
+                                    Gallery
                                 </Container>
                                 <Footer/>
                             </div>

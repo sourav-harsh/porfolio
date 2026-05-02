@@ -12,7 +12,7 @@ function Expirence() {
                     <h3 className="title">Education</h3>
                 </div>
             </div>
-            <div className="mt-2 flex flex-col gap-4">
+            <div className="mt-2 flex flex-col gap-4 pl-1.5 w-full h-36 overflow-y-scroll">
 
                 <div className="flex gap-4">
                     <div className="w-[0.5px] rounded-xl bg-gray-300/30"></div>

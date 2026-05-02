@@ -14,9 +14,6 @@ function TechStack() {
                         <FaTools />
                         <h3 className="title">Tech Stack</h3>
                     </div>
-                    <div className="flex items-center gap-2 text-xs">
-                        <button className="btn">View All</button>
-                    </div>
                 </div>
                 <div className="flex flex-col gap-2 mt-2">
                     <ProgramLang/>

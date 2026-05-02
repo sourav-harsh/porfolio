@@ -26,50 +26,90 @@
       "icon": "FaLinkedin",
       "title": "LinkedIn",
       "url": "https://www.linkedin.com/in/sinu-kumar29/"
+    },{
+      "icon": "TbBrandLeetcode",
+      "title": "LeetCode",
+      "url": "https://leetcode.com/u/rahe_rahe/"
     }
   ],
   "projects": [
     {
-      "title": "Pseudocode to C",
-      "description": "Pseudocode to C is a web app that translates pseudocode into C code, aiding in the transition from high-level logic to a lower-level language.",
-      "technologies": "React, Tailwind, Flask, SpaCy",
-      "github": "https://github.com/dsbalico/pseudocode-to-c",
-      "link": "https://pseudocode-to-c.netlify.app/"
+      "title": "Youtube Clone",
+      "description": "Developed to learn full-stack web development use MERN stack to build the entire project. Also done SRP which used the JWT to authentication.",
+      "technologies": "React, Tailwind, MongoDB, Express, Node.js",
+      "github": "https://github.com/sourav-harsh/youtub-clone",
+      "link": "#"
     },
     {
-      "title": "YouShare",
-      "description": "Developed to learn full-stack web development using Nuxt3, Express, and PostgreSQL in fulfillment of my internship requirements.",
-      "technologies": "Nuxt, Tailwind, Express, PostgreSQL",
-      "github": "https://github.com/dsbalico/YouShare",
-      "link": "https://github.com/dsbalico/YouShare"
+      "title": "My Portfolio",
+      "description": "Developed to learn just the frontend using HTML, CSS in one html file.",
+      "technologies": "HTML, CSS, JS",
+      "github": "https://github.com/sourav-harsh/My-Portfolio",
+      "link": "https://sourav-harsh.github.io/My-Portfolio/"
     },
     {
-      "title": "Draw & Classify",
-      "description": "Draw & Classify is a web application designed to test my machine learning model, which classifies drawn letters, digits, or shapes.",
-      "technologies": "React, Tailwind, Tensorflow",
-      "github": "https://github.com/dsbalico/letter-digit-shape-classification",
-      "link": "https://letterdigitshape-classification.netlify.app/"
+      "title": "Keeper App",
+      "description": "This is the react app. The key feature is of this app is to take a note and store it in the memory and local storage. And after that you can delete and edit it too.",
+      "technologies": "React, Tailwind, localStorage api's",
+      "github": "https://github.com/sourav-harsh/Keeper-App",
+      "link": "https://amazing-kitsune-29ffe5.netlify.app/"
     },
     {
-      "title": "Chatroom",
-      "description": "Chatroom is a simple online chatting web application where you can create chat rooms and have a fun conversation with a group of people.",
-      "technologies": "React, Tailwind, Firebase",
-      "github": "https://github.com/dsbalico/chatroom",
-      "link": "https://thechatroom.netlify.app/"
+      "title": "TinDog",
+      "description": "It is a website of intresting dog meeting,with using of Html,Css and JavaScript.",
+      "technologies": "HTML, CSS, JS",
+      "github": "https://github.com/sourav-harsh/TinDog",
+      "link": "https://sourav-harsh.github.io/TinDog/"
     },
     {
-      "title": "Sudoku Solver",
-      "description": "Sudoku Solver is a web application that can generate or solve sudoku problems using simulated annealing, an optimization algorithm.",
-      "technologies": "React, Tailwind, TypeScript",
-      "github": "https://github.com/dsbalico/sudoku-solver-using-simulated-annealing",
-      "link": "https://sudoku-solver-sa.netlify.app/"
+      "title": "Todos-list App",
+      "description": "This is the react app. The key feature is of this app is to add your daily goals and use this as a checklist.",
+      "technologies": "React, Tailwind, Javascript",
+      "github": "https://github.com/sourav-harsh/todolist ",
+      "link": "https://sage-dango-c5202e.netlify.app/"
     },
     {
-      "title": "Probability Pick",
-      "description": "Probability Pick is a PCSO Lotto Number Generator that calculates the likelihood of selecting winning numbers based on historical draw data.",
-      "technologies": "React, Tailwind, Flask",
-      "github": "https://github.com/dsbalico/pcso-lotto-number-generator",
-      "link": "https://probability-pick.netlify.app/"
+      "title": "Ecommerce App",
+      "description": "This is the next.js app. The key feature of this app is a full stack web dev with frontend, backend and database.",
+      "technologies": "React, Tailwind, Stripe",
+      "github": "https://github.com/sourav-harsh/ecommerceFrontend",
+      "link": "https://dapper-figolla-fb5cd2.netlify.app/"
+    }  ,  {
+      "title": "Cocktail App",
+      "description": "This is the next.js app. The key feature of this app is to show the price of the cocktail web dev with frontend.",
+      "technologies": "React, Tailwind",
+      "github": "https://github.com/sourav-harsh/ecommerceFrontend",
+      "link": "https://comforting-dodol-5761b2.netlify.app"
+    }, {
+      "title": "Pizza Shop",
+      "description": "This is the next.js app. The key feature of this app is to show the price of the pizza web dev with frontend.",
+      "technologies": "React, Tailwind",
+      "github": "https://github.com/sourav-harsh/ecommerceFrontend",
+      "link": "https://sweet-frangollo-3d3d56.netlify.app/"
+    }, {
+      "title": "Hover Effect",
+      "description": "This is the a simple html,css,js app. The key feature of this app is a full stack web dev with frontend. Just playing with hover effect.",
+      "technologies": "React, Tailwind",
+      "github": "https://github.com/sourav-harsh/ecommerceFrontend",
+      "link": "https://sourav-harsh.github.io/hover-effect/"
+    } ,{
+      "title": "Product Card",
+      "description": "This is the a simple html,css,js app. The key feature of this app is a full stack web dev with frontend. Just playing z-index and collapsible.",
+      "technologies": "React, Tailwind",
+      "github": "https://github.com/sourav-harsh/ecommerceFrontend",
+      "link": "https://sourav-harsh.github.io/Product_Card/"
+    },{
+      "title": "Scrolling App",
+      "description": "This is the a simple html,css,js app. The key feature of this app is a full stack web dev with frontend. Just playing scrolling and z-index.",
+      "technologies": "React, Tailwind",
+      "github": "https://github.com/sourav-harsh/ecommerceFrontend",
+      "link": "https://sourav-harsh.github.io/Parallex_Scroll_Website/"
+    },{
+      "title": "World Travel",
+      "description": "This is the a simple html,css,js app. The key feature of this app is a full stack web dev with frontend.",
+      "technologies": "React, Tailwind",
+      "github": "https://github.com/sourav-harsh/ecommerceFrontend",
+      "link": "https://sourav-harsh.github.io/World-Travle-App/"
     }
   ],
   "education": [
@@ -118,58 +158,51 @@
   ],
   "certificates": [
     {
-      "title": "Foundations of Cybersecurity Certificate",
-      "description": "Provided by Coursera & Authorized by IBM",
+      "title": "System Design Cohort",
+      "description": "Provided by ChaiCode",
       "icon": "ibm",
-      "link": "https://www.coursera.org/account/accomplishments/records/SF2PPLNVTH6R"
+      "link": "https://www.udemy.com/certificate/UC-6c7baecf-758c-443e-9285-a993793231f4/"
+    }, {
+      "title": "Starting with Quarkus",
+      "description": "Provided by Udemy",
+      "icon": "ibm",
+      "link": "https://www.udemy.com/certificate/UC-6c7baecf-758c-443e-9285-a993793231f4/"
     },
     {
-      "title": "Git and GitHub Essentials",
-      "description": "Provided by Coursera & Authorized by IBM",
+      "title": "The Complete Flutter Development Bootcamp with Dart",
+      "description": "Provided by Udemy",
       "icon": "ibm",
-      "link": "https://www.credly.com/badges/fa00026a-4db5-4269-ab4f-340f5382ac03"
+      "link": "https://www.udemy.com/certificate/UC-8334416a-846f-4613-90fa-bf74ae401a31/"
     },
     {
-      "title": "Crash Course on Python Certificate",
-      "description": "Provided by Coursera & Authorized by Google",
+      "title": "The Complete 2023 Web Development Bootcamp",
+      "description": "Provided by Udemy",
       "icon": "google",
-      "link": "https://www.coursera.org/account/accomplishments/verify/S9773NBEK4S6"
+      "link": "https://www.udemy.com/certificate/UC-8334416a-846f-4613-90fa-bf74ae401a31/"
     },
     {
-      "title": "Technical Support Fundamentals Certificate",
-      "description": "Provided by Coursera & Authorized by Google",
+      "title": "Programming for Everybody (Getting Started with Python)",
+      "description": "Provided by Coursera",
       "icon": "google",
-      "link": "https://www.coursera.org/account/accomplishments/verify/P9EH5HNYRESZ"
+      "link": "https://coursera.org/share/c452f457154b08fa40fad1cd7c32564c"
     },
     {
-      "title": "Introduction to Web Development with HTML, CSS, JavaScript Certificate",
-      "description": "Provided by Coursera & Authorized by IBM",
+      "title": "Introduction to Machine Learning",
+      "description": "Provided by Coursera",
       "icon": "ibm",
-      "link": "https://www.credly.com/badges/7b88eb00-e1f9-4ae6-be2a-3b2ae8983c44"
+      "link": "https://www.coursera.org/account/accomplishments/verify/B3D42P7GLNNT"
     },
     {
-      "title": "Introduction to Cloud Computing Certificate",
-      "description": "Provided by Coursera & Authorized by IBM",
+      "title": "Cloud Computing Foundations",
+      "description": "Provided by Coursera",
       "icon": "ibm",
-      "link": "https://www.credly.com/badges/514b694a-8dc4-418d-9af4-61908dc29ca8"
+      "link": "https://www.coursera.org/account/accomplishments/verify/88KJ47TTF8P6"
     },
     {
-      "title": "Django Application Development with SQL and Databases Certificate",
-      "description": "Provided by Coursera & Authorized by IBM",
+      "title": "Ethics, Technology and Engineering",
+      "description": "Provided by Coursera",
       "icon": "ibm",
-      "link": "https://www.credly.com/badges/a36dd8a3-1050-4c4e-bcef-97b39babf55e"
-    },
-    {
-      "title": "Front-End Developer (React) Certificate",
-      "description": "Provided by HackerRank",
-      "icon": "hackerrank",
-      "link": "https://www.hackerrank.com/certificates/631ac3acf267"
-    },
-    {
-      "title": "Software Engineer Certificate",
-      "description": "Provided by HackerRank",
-      "icon": "hackerrank",
-      "link": "https://www.hackerrank.com/certificates/efdbdd44eb7d"
+      "link": "https://www.coursera.org/account/accomplishments/verify/DXSZ9T9KYFDQ"
     }
   ],
   "contact": {

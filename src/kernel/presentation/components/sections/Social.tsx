@@ -21,7 +21,7 @@ function Social() {
                     {info.socials?.map((social,index) =>
                         (
                             <a id={`${index}`} key={social.title} href={social.url}
-                               className="flex items-center justify-between bg-white/10 p-2 rounded-lg hover:translate-x-2 transition-all ease-in-out cursor-pointer"
+                               className="flex items-center justify-between dark:bg-white/10 bg-black/10 p-2 rounded-lg hover:translate-x-2 transition-all ease-in-out cursor-pointer"
                                target="_blank"
                             >
                                 <div className="flex items-center gap-2">

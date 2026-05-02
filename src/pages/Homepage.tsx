@@ -33,7 +33,6 @@ function Homepage() {
             "image": "",
             "position": "",
             "repeat": "",
-            "size": "",
             "opacity": 1
         },
         "backgroundMask": {
@@ -537,24 +536,30 @@ function Homepage() {
     return (
         <>{init && <Particles
             id="tsparticles"
+            className="w-full h-full"
             options={option}
         />}
             <div
                 className="dark:bg-black bg-[#FFFDD0] dark:text-white text-black min-h-screen min-w-screen w-full bg-cover bg-center bg-no-repeat xl:p-5 p-3">
                 <div className="w-full">
-                    <div className="flex items-center justify-center w-full">
-                        <div className="w-[50rem] h-full rounded-2xl">
+                    <div className="md:flex md:items-center md:justify-center w-full">
+                        <div className="md:w-[50rem] h-full rounded-2xl">
                             <div
-                                className="grid md:grid-cols-2 grid-cols-1 gap-2 items-stretch justify-stretch dark:text-white text-black">
+                                className="md:grid md:grid-cols-2 md:gap-2 md:items-stretch md:justify-stretch dark:text-white text-black">
                                 <div className="col-span-2 row-span-2">
                                     <Hero switchTheme={switchTheme}/>
+                                    <div className="md:hidden mt-2">
+                                        <About/>
+                                    </div>
                                 </div>
-                                <div className="col-span-1 row-span-4 flex flex-col gap-2 h-full">
-                                    <About/>
+                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-2 h-full">
+                                    <div className="md:inline hidden">
+                                        <About/>
+                                    </div>
                                     <TechStack/>
                                     <Projects/>
                                 </div>
-                                <div className="col-span-1 row-span-4 flex flex-col gap-2 h-full">
+                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-2 h-full">
                                     <Expirence/>
                                     <Education/>
                                     <Certifications/>

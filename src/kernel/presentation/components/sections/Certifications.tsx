@@ -18,13 +18,13 @@ function Certifications() {
                         (
                             <a href={social.link} target="_blank" rel="noreferrer" key={social.title}>
                                 <div id={`${index}`} key={social.title}
-                                     className="flex items-center justify-between bg-white/10 p-2 rounded-lg hover:-translate-y-0.5 transition-all ease-in-out cursor-pointer"
+                                     className="flex items-center justify-between dark:bg-white/10 bg-black/10 p-2 rounded-lg hover:-translate-y-0.5 transition-all ease-in-out cursor-pointer"
                                 >
                                     <div className="">
                                         <h3 className="text-base">
                                             {social.title}
                                         </h3>
-                                        <p className="text-xs text-white/40">
+                                        <p className="text-xs dark:text-white/40 text-black/40 mt-1">
                                             {social.description}
                                         </p>
                                     </div>

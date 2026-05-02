@@ -3,9 +3,9 @@ import type {ToggleThemeProps} from "./types.ts";
 
 function ToggleTheme({ switchTheme }:ToggleThemeProps) {
     return (
-        <div className="relative">
-            <div className="hs-tooltip [--placement:bottom] inline-block">
-                <button onClick={switchTheme} className="hs-tooltip-toggle text-2xl text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 absolute top-5 right-5" aria-label="Dark Mode Button">
+        <div className="relative cursor-pointer">
+            <div className="hs-tooltip [--placement:bottom] inline-block cursor-pointer">
+                <button onClick={switchTheme} className="cursor-pointer hs-tooltip-toggle text-2xl text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 absolute top-5 right-5" aria-label="Dark Mode Button">
                     <CgDarkMode />
 
                     {/* =========== TOOLTIP TEXT =========== */}

@@ -28,7 +28,7 @@ const Hero = ({switchTheme}: ToggleThemeProps) => {
                     <img src={info.main?.photo} alt="profile pic of sourav" className="w-40 md:h-36 h-40 rounded-xl"/>
                     <div className="w-full dark:text-white text-black">
                         <div className="flex items-start justify-between">
-                            <h2 className="md:text-2xl text-lg font-bold flex items-center gap-1">{info.main?.name}
+                            <h2 className="md:text-2xl text-base font-bold flex items-center gap-1">{info.main?.name}
                                 <MdVerified color="#3366ff"/></h2>
                             <div className="md:-mt-3 md:static absolute md:-top-5 -top-3 md:-right-5 -right-3">
                                 <ToggleTheme switchTheme={switchTheme}/>
@@ -39,8 +39,8 @@ const Hero = ({switchTheme}: ToggleThemeProps) => {
                             {info.main.location}
                         </p>
 
-                        <div className="flex items-center justify-between mt-5">
-                            <p className="md:text-base text-sm">{info.main.role}</p>
+                        <div className="flex items-center justify-between md:mt-5 mt-2.5">
+                            <p className="md:text-base text-xs">{info.main.role}</p>
                             <button
                                 className="px-4 py-1 bg-blue-500 rounded text-xs text-white font-normal md:flex items-center gap-1 relative cursor-pointer  hidden"
                                 onClick={handleLearningGoal}>
@@ -83,15 +83,32 @@ const Hero = ({switchTheme}: ToggleThemeProps) => {
                     </div>
                 </div>
                 <button
-                    className="mt-2 dark:text-white text-black px-4 py-1 bg-blue-500 rounded text-xs font-normal flex items-center justify-between relative cursor-pointer w-full  md:hidden"
+                    className="mt-2 text-white px-4 py-1 bg-blue-500 rounded text-xs font-normal flex items-center justify-between relative cursor-pointer w-full  md:hidden"
                     onClick={handleLearningGoalMobileScreen}>
                     <div className="flex items-center gap-1">
                         <FaGraduationCap size={18}/>
                         {info.main.learningGoalBtn}
                     </div>
                     <div className="border-l border-l-white pl-3 ml-3"><FaCaretDown/></div>
-                    <div className="absolute top-8 right-0 w-48 h-full bg-black/50 hidden"
-                         id="learningGoalDropdownMobileScreen"></div>
+                    <div className="absolute top-8 right-0 w-48 hidden"
+                         id="learningGoalDropdownMobileScreen">
+                        <div
+                            className="relative">
+                            <div className="z-[99999999] rounded p-5 flex flex-col h-max dark:bg-gray-300 bg-black/50 dark:text-black text-white">
+
+                                <p className="text-xs font-normal">{info.main.futureLearningSubTitle}</p>
+                                <div>
+                                    <ol>
+                                        {info.main.futureLearning?.map((item, index) => (
+                                            <li key={index} className="text-xs font-normal"><p
+                                                className="font-semibold">{item.title}</p> - {item.description}
+                                            </li>
+                                        ))}
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </button>
             </div>
         </Container>

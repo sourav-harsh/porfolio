@@ -10,6 +10,7 @@ export type ProjectProps = {
 
 export type ToggleThemeProps = {
     switchTheme: () => void;
+    theme?: string;
 };
 
 export type MyComponentProps = {

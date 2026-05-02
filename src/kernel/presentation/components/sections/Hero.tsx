@@ -9,8 +9,9 @@ import {TbBrandTelegram} from "react-icons/tb";
 import {FaCaretDown} from "react-icons/fa";
 import type {ToggleThemeProps} from "../types.ts";
 import Container from "../shared/Container.tsx";
+import {createPortal} from "react-dom";
 
-const Hero = ({switchTheme}: ToggleThemeProps) => {
+const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
     const handleLearningGoal = () => {
         const learningGoalDropdown = document.getElementById("learningGoalDropdown");
         learningGoalDropdown?.classList.toggle("hidden");
@@ -25,7 +26,8 @@ const Hero = ({switchTheme}: ToggleThemeProps) => {
         <Container>
             <div>
                 <div className="flex gap-4 w-full">
-                    <img src={info.main?.photo} alt="profile pic of sourav" className="w-40 md:h-36 h-40 rounded-xl"/>
+                    <img src={`${info.main?.photo}` + (theme === 'dark' ? '_dark.png' : '.png')}
+                         alt="profile pic of sourav" className="w-40 md:h-36 h-40 rounded-xl"/>
                     <div className="w-full dark:text-white text-black">
                         <div className="flex items-start justify-between">
                             <h2 className="md:text-2xl text-base font-bold flex items-center gap-1">{info.main?.name}
@@ -39,7 +41,7 @@ const Hero = ({switchTheme}: ToggleThemeProps) => {
                             {info.main.location}
                         </p>
 
-                        <div className="flex items-center justify-between md:mt-5 mt-2.5">
+                        <div className="flex items-center justify-between md:mt-5 mt-2.5 ">
                             <p className="md:text-base text-xs">{info.main.role}</p>
                             <button
                                 className="px-4 py-1 bg-blue-500 rounded text-xs text-white font-normal md:flex items-center gap-1 relative cursor-pointer  hidden"
@@ -47,25 +49,33 @@ const Hero = ({switchTheme}: ToggleThemeProps) => {
                                 <FaGraduationCap size={18}/>
                                 {info.main.learningGoalBtn}
                                 <div className="border-l border-l-white pl-3 ml-3"><FaCaretDown/></div>
-                                <div className="absolute top-8 right-0 w-60 hidden"
-                                     id="learningGoalDropdown">
-                                    <div
-                                        className="relative">
-                                        <div className="z-[99999999] rounded-xl p-5 flex flex-col h-max dark:bg-gray-300 bg-black/50 dark:text-black text-white">
+                                {
+                                    createPortal(
+                                        <div
+                                            className="fixed xl:top-40 md:top-36 xl:right-96 lg:right-36 md:right-8 w-72 hidden" id="learningGoalDropdown"
+                                        >
+                                            <div
+                                                className="rounded-xl p-5 flex flex-col h-max dark:bg-gray-300 bg-black/90 dark:text-black text-white text-left shadow-2xl"
+                                            >
+                                                <p className="text-[0.6rem] font-semibold">
+                                                    {info.main.futureLearningSubTitle}
+                                                </p>
 
-                                            <p className="text-xs font-normal">{info.main.futureLearningSubTitle}</p>
-                                            <div>
-                                                <ol>
-                                                    {info.main.futureLearning?.map((item, index) => (
-                                                        <li key={index} className="text-xs font-normal"><p
-                                                            className="font-semibold">{item.title}</p> - {item.description}
-                                                        </li>
-                                                    ))}
-                                                </ol>
+                                                <div className="pl-3">
+                                                    <ol className="list-disc ">
+                                                        {info.main.futureLearning?.map((item, index) => (
+                                                            <li key={index} className="text-xs font-normal mt-2 dark:marker:text-blue-500 marker:text-yellow-500">
+                                                                <span className="font-semibold underline">{item.title}</span>
+                                                                -{item.description}
+                                                            </li>
+                                                        ))}
+                                                    </ol>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        </div>,
+                                        document.body
+                                    )
+                                }
                             </button>
                         </div>
                         <div className="flex items-center flex-wrap gap-2 mt-5">
@@ -90,25 +100,31 @@ const Hero = ({switchTheme}: ToggleThemeProps) => {
                         {info.main.learningGoalBtn}
                     </div>
                     <div className="border-l border-l-white pl-3 ml-3"><FaCaretDown/></div>
-                    <div className="absolute top-8 right-0 w-48 hidden"
-                         id="learningGoalDropdownMobileScreen">
+                    { createPortal( <div className="fixed top-60 right-14 w-72 hidden md:hidden"
+                                         id="learningGoalDropdownMobileScreen">
                         <div
                             className="relative">
-                            <div className="z-[99999999] rounded p-5 flex flex-col h-max dark:bg-gray-300 bg-black/50 dark:text-black text-white">
+                            <div
+                                className="z-[99999999] rounded-xl p-5 flex flex-col h-max dark:bg-gray-300 bg-black/90 dark:text-black text-white">
 
-                                <p className="text-xs font-normal">{info.main.futureLearningSubTitle}</p>
-                                <div>
-                                    <ol>
+                                <p className="text-[0.6rem] font-semibold">
+                                    {info.main.futureLearningSubTitle}
+                                </p>
+
+                                <div className="pl-3">
+                                    <ol className="list-disc ">
                                         {info.main.futureLearning?.map((item, index) => (
-                                            <li key={index} className="text-xs font-normal"><p
-                                                className="font-semibold">{item.title}</p> - {item.description}
+                                            <li key={index} className="text-xs font-normal mt-2 dark:marker:text-blue-500 marker:text-yellow-500">
+                                                <span className="font-semibold underline">{item.title}</span>
+                                                -{item.description}
                                             </li>
                                         ))}
                                     </ol>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>, document.body)}
+
                 </button>
             </div>
         </Container>

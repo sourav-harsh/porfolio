@@ -547,7 +547,7 @@ function Homepage() {
                             <div
                                 className="md:grid md:grid-cols-2 md:gap-2 md:items-stretch md:justify-stretch dark:text-white text-black">
                                 <div className="col-span-2 row-span-2">
-                                    <Hero switchTheme={switchTheme}/>
+                                    <Hero switchTheme={switchTheme} theme={theme}/>
                                     <div className="md:hidden mt-2">
                                         <About/>
                                     </div>

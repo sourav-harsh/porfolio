@@ -552,14 +552,14 @@ function Homepage() {
                                         <About/>
                                     </div>
                                 </div>
-                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-2 h-full">
+                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-2 h-full md:mt-0 mt-2">
                                     <div className="md:inline hidden">
                                         <About/>
                                     </div>
                                     <TechStack/>
                                     <Projects/>
                                 </div>
-                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-2 h-full">
+                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-2 h-full md:mt-0 mt-2">
                                     <Expirence/>
                                     <Education/>
                                     <Certifications/>

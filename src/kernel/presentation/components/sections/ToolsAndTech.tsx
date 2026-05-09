@@ -1,37 +1,37 @@
 import ShineContainer from "../shared/ShineContainer.tsx";
-import {FaJava, FaPython} from "react-icons/fa";
-import {BsJavascript, BsTypescript} from "react-icons/bs";
-import {FaC} from "react-icons/fa6";
+import {FaGithub} from "react-icons/fa";
+import {SiApachemaven, SiPostman} from "react-icons/si";
+import {TbBrandOauth} from "react-icons/tb";
+import {BsClaude} from "react-icons/bs";
 
-function ProgramLang() {
+function ToolsAndTech() {
     return (
         <div>
-            <h3 className="text-base font-bold">Programing Languages</h3>
+            <h3 className="text-base font-bold">Tools & Technologies</h3>
             <div className="flex flex-wrap gap-2 mt-2">
                 <ShineContainer classes="flex items-center gap-2">
-                    <FaJava/>
-                    Java
+                    <SiPostman />
+                    Postman
                 </ShineContainer>
                 <ShineContainer classes="flex items-center gap-2">
-                    <BsJavascript/>
-                    JavaScript
+                    <FaGithub />
+                    GitHub
                 </ShineContainer>
                 <ShineContainer classes="flex items-center gap-2">
-                    <BsTypescript />
-                    TypeScript
+                    <SiApachemaven />
+                    Maven
                 </ShineContainer>
                 <ShineContainer classes="flex items-center gap-2">
-                    <FaC color='white'/>
-                    C/C++
+                    <TbBrandOauth />
+                    OAuth
                 </ShineContainer>
                 <ShineContainer classes="flex items-center gap-2">
-                    <FaPython/>
-                    Python
+                    <BsClaude />
+                    AI
                 </ShineContainer>
-
             </div>
         </div>
     );
 }
 
-export default ProgramLang;
+export default ToolsAndTech;

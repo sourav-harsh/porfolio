@@ -4,6 +4,7 @@ import ProgramLang from "./ProgramLang.tsx";
 import BackendTech from "./BackendTech.tsx";
 import FrontedTech from "./FrontedTech.tsx";
 import DevOpsOrCloud from "./DevOpsOrCloud.tsx";
+import ToolsAndTech from "./ToolsAndTech.tsx";
 
 function TechStack() {
     return (
@@ -15,11 +16,12 @@ function TechStack() {
                         <h3 className="title">Tech Stack</h3>
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 mt-2">
+                <div className="flex flex-col gap-2 mt-2 h-[20.5rem] overflow-y-scroll">
                     <ProgramLang/>
                     <BackendTech/>
                     <FrontedTech/>
                     <DevOpsOrCloud/>
+                    <ToolsAndTech/>
                 </div>
             </div>
         </Container>

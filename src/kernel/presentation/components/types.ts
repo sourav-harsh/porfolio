@@ -6,6 +6,8 @@ export type ProjectProps = {
     technologies: string;
     link: string;
     github: string;
+    isDemoDisabled:boolean;
+    isRepoDisabled:boolean;
 };
 
 export type ToggleThemeProps = {

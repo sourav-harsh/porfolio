@@ -10,6 +10,7 @@ import {FaCaretDown} from "react-icons/fa";
 import type {ToggleThemeProps} from "../types.ts";
 import Container from "../shared/Container.tsx";
 import {createPortal} from "react-dom";
+import {useEffect, useRef} from "react";
 
 const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
     const handleLearningGoal = () => {
@@ -22,9 +23,39 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
         learningGoalDropdown?.classList.toggle("hidden");
     }
 
+    const componentRef = useRef<HTMLDivElement>(null);
+
+    const closeAllTheOverlaySelectBox = () => {
+        const dropDownContainer = document.getElementById("learningGoalDropdown");
+        const dropDownContainerMobile = document.getElementById("learningGoalDropdownMobileScreen");
+
+        dropDownContainer?.classList.add('hidden');
+        dropDownContainerMobile?.classList.add('hidden');
+    }
+
+    useEffect(() => {
+        // 2. Define the click handler inside or outside, but reference it cleanly
+        const handleDocumentClick = (event: MouseEvent) => {
+            const path = event.composedPath?.();
+
+            // 3. Replace "this" with "componentRef.current"
+            if (path && componentRef.current && !path.includes(componentRef.current)) {
+                closeAllTheOverlaySelectBox();
+            }
+        };
+
+        document.addEventListener('click', handleDocumentClick, true);
+        document.addEventListener('scroll', closeAllTheOverlaySelectBox, true);
+
+        // 4. CRITICAL: Add a cleanup function to prevent memory leaks (disconnectedCallback)
+        return () => {
+            document.removeEventListener('click', handleDocumentClick, true);
+        };
+    }, []);
+
     return (
         <Container>
-            <div>
+            <div id="dropdown-container" ref={componentRef}>
                 <div className="flex gap-4 w-full">
                     <img src={`${info.main?.photo}` + (theme === 'dark' ? '_dark.png' : '.png')}
                          alt="profile pic of sourav" className="w-40 md:h-36 h-40 rounded-xl"/>
@@ -52,7 +83,8 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
                                 {
                                     createPortal(
                                         <div
-                                            className="fixed xl:top-40 md:top-36 xl:right-96 lg:right-36 md:right-8 w-72 hidden" id="learningGoalDropdown"
+                                            className="fixed xl:top-40 md:top-36 xl:right-96 lg:right-36 md:right-8 w-72 hidden"
+                                            id="learningGoalDropdown"
                                         >
                                             <div
                                                 className="rounded-xl p-5 flex flex-col h-max dark:bg-gray-300 bg-black/90 dark:text-black text-white text-left shadow-2xl"
@@ -64,8 +96,10 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
                                                 <div className="pl-3">
                                                     <ol className="list-disc ">
                                                         {info.main.futureLearning?.map((item, index) => (
-                                                            <li key={index} className="text-xs font-normal mt-2 dark:marker:text-blue-500 marker:text-yellow-500">
-                                                                <span className="font-semibold underline">{item.title}</span>
+                                                            <li key={index}
+                                                                className="text-xs font-normal mt-2 dark:marker:text-blue-500 marker:text-yellow-500">
+                                                                <span
+                                                                    className="font-semibold underline">{item.title}</span>
                                                                 -{item.description}
                                                             </li>
                                                         ))}
@@ -100,8 +134,8 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
                         {info.main.learningGoalBtn}
                     </div>
                     <div className="border-l border-l-white pl-3 ml-3"><FaCaretDown/></div>
-                    { createPortal( <div className="fixed top-60 right-14 w-72 hidden md:hidden"
-                                         id="learningGoalDropdownMobileScreen">
+                    {createPortal(<div className="fixed top-60 right-14 w-72 hidden md:hidden"
+                                       id="learningGoalDropdownMobileScreen">
                         <div
                             className="relative">
                             <div
@@ -114,7 +148,8 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
                                 <div className="pl-3">
                                     <ol className="list-disc ">
                                         {info.main.futureLearning?.map((item, index) => (
-                                            <li key={index} className="text-xs font-normal mt-2 dark:marker:text-blue-500 marker:text-yellow-500">
+                                            <li key={index}
+                                                className="text-xs font-normal mt-2 dark:marker:text-blue-500 marker:text-yellow-500">
                                                 <span className="font-semibold underline">{item.title}</span>
                                                 -{item.description}
                                             </li>
@@ -129,6 +164,7 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
             </div>
         </Container>
     );
+
 };
 
 export default Hero;

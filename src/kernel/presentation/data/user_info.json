@@ -9,7 +9,7 @@
     "learningGoalBtn": "Learning Goal",
     "sendMailBtnTxt": "Send Mail",
     "resumeBtnTxt": "Download Resume",
-    "resumeLink": "https://drive.google.com/file/d/1ZSa8QPGE77CUirQXhRejf8ww2uvn8Tcq/view?usp=sharing",
+    "resumeLink": "https://drive.google.com/file/d/1hBgj7IfrFP72xRSML5ugFeGVmI30KxbX/view?usp=sharing",
     "futureLearningSubTitle": "Areas I focus on to design and deliver robust applications, covering frontend, backend, database management, AI integration, workflow automation, and scalable deployments.",
     "futureLearning": [
       {
@@ -50,82 +50,122 @@
   ],
   "projects": [
     {
+      "title": "Distributed Social Media",
+      "description": "Developed a scalable Social Media Platform using Microservices, Spring Boot, Neo4j, Kafka, JWT, API Gateway, Kubernetes, and GKE.",
+      "technologies": "React, Tailwind, MongoDB, Express, Node.js",
+      "github": "#",
+      "link": "#",
+      "isDemoDisabled": true,
+      "isRepoDisabled": true
+    }, {
+      "title": "Hotel Management System",
+      "technologies": "React, Tailwind, MongoDB, Express, Node.js",
+      "description": "Developed a scalable Hotel Reservation Platform using Spring Boot, PostgreSQL, Spring Security, JWT, RBAC, Stripe Checkout & Webhooks, JPA/Hibernate, Cron Scheduler, and the Decorator Design Pattern.",
+      "github": "#",
+      "link": "#",
+      "isDemoDisabled": true,
+      "isRepoDisabled": true
+    }, {
       "title": "Youtube Clone",
       "description": "Developed to learn full-stack web development use MERN stack to build the entire project. Also done SRP which used the JWT to authentication.",
       "technologies": "React, Tailwind, MongoDB, Express, Node.js",
       "github": "https://github.com/sourav-harsh/youtub-clone",
-      "link": "#"
+      "link": "#",
+      "isDemoDisabled": true,
+      "isRepoDisabled": false
     },
     {
       "title": "My Portfolio",
       "description": "Developed to learn just the frontend using HTML, CSS in one html file.",
       "technologies": "HTML, CSS, JS",
       "github": "https://github.com/sourav-harsh/My-Portfolio",
-      "link": "https://sourav-harsh.github.io/My-Portfolio/"
+      "link": "https://sourav-harsh.github.io/My-Portfolio/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     },
     {
       "title": "Keeper App",
       "description": "This is the react app. The key feature is of this app is to take a note and store it in the memory and local storage. And after that you can delete and edit it too.",
       "technologies": "React, Tailwind, localStorage api's",
       "github": "https://github.com/sourav-harsh/Keeper-App",
-      "link": "https://amazing-kitsune-29ffe5.netlify.app/"
+      "link": "https://amazing-kitsune-29ffe5.netlify.app/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     },
     {
       "title": "TinDog",
       "description": "It is a website of intresting dog meeting,with using of Html,Css and JavaScript.",
       "technologies": "HTML, CSS, JS",
       "github": "https://github.com/sourav-harsh/TinDog",
-      "link": "https://sourav-harsh.github.io/TinDog/"
+      "link": "https://sourav-harsh.github.io/TinDog/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     },
     {
       "title": "Todos-list App",
       "description": "This is the react app. The key feature is of this app is to add your daily goals and use this as a checklist.",
       "technologies": "React, Tailwind, Javascript",
       "github": "https://github.com/sourav-harsh/todolist ",
-      "link": "https://sage-dango-c5202e.netlify.app/"
+      "link": "https://sage-dango-c5202e.netlify.app/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     },
     {
       "title": "Ecommerce App",
       "description": "This is the next.js app. The key feature of this app is a full stack web dev with frontend, backend and database.",
       "technologies": "React, Tailwind, Stripe",
       "github": "https://github.com/sourav-harsh/ecommerceFrontend",
-      "link": "https://dapper-figolla-fb5cd2.netlify.app/"
+      "link": "https://dapper-figolla-fb5cd2.netlify.app/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     }  ,  {
       "title": "Cocktail App",
       "description": "This is the next.js app. The key feature of this app is to show the price of the cocktail web dev with frontend.",
       "technologies": "React, Tailwind",
       "github": "https://github.com/sourav-harsh/ecommerceFrontend",
-      "link": "https://comforting-dodol-5761b2.netlify.app"
+      "link": "https://comforting-dodol-5761b2.netlify.app",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     }, {
       "title": "Pizza Shop",
       "description": "This is the next.js app. The key feature of this app is to show the price of the pizza web dev with frontend.",
       "technologies": "React, Tailwind",
       "github": "https://github.com/sourav-harsh/ecommerceFrontend",
-      "link": "https://sweet-frangollo-3d3d56.netlify.app/"
+      "link": "https://sweet-frangollo-3d3d56.netlify.app/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     }, {
       "title": "Hover Effect",
       "description": "This is the a simple html,css,js app. The key feature of this app is a full stack web dev with frontend. Just playing with hover effect.",
       "technologies": "React, Tailwind",
       "github": "https://github.com/sourav-harsh/ecommerceFrontend",
-      "link": "https://sourav-harsh.github.io/hover-effect/"
+      "link": "https://sourav-harsh.github.io/hover-effect/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     } ,{
       "title": "Product Card",
       "description": "This is the a simple html,css,js app. The key feature of this app is a full stack web dev with frontend. Just playing z-index and collapsible.",
       "technologies": "React, Tailwind",
       "github": "https://github.com/sourav-harsh/ecommerceFrontend",
-      "link": "https://sourav-harsh.github.io/Product_Card/"
+      "link": "https://sourav-harsh.github.io/Product_Card/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     },{
       "title": "Scrolling App",
       "description": "This is the a simple html,css,js app. The key feature of this app is a full stack web dev with frontend. Just playing scrolling and z-index.",
       "technologies": "React, Tailwind",
       "github": "https://github.com/sourav-harsh/ecommerceFrontend",
-      "link": "https://sourav-harsh.github.io/Parallex_Scroll_Website/"
+      "link": "https://sourav-harsh.github.io/Parallex_Scroll_Website/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     },{
       "title": "World Travel",
       "description": "This is the a simple html,css,js app. The key feature of this app is a full stack web dev with frontend.",
       "technologies": "React, Tailwind",
       "github": "https://github.com/sourav-harsh/ecommerceFrontend",
-      "link": "https://sourav-harsh.github.io/World-Travle-App/"
+      "link": "https://sourav-harsh.github.io/World-Travle-App/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
     }
   ],
   "education": [

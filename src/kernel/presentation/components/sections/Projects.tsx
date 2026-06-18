@@ -17,7 +17,7 @@ function Projects() {
                         (
 
                             <div id={`${index}`} key={project.title}
-                                 className="flex items-center justify-between dark:bg-white/10 bg-black/10 p-2 rounded-lg hover:-translate-y-1 transition-all ease-in-out cursor-pointer"
+                                 className="flex items-center justify-between dark:bg-white/10 bg-black/10 p-2 rounded-lg hover:-translate-y-1 transition-all ease-in-out"
                             >
                                 <div className="">
                                     <div className="flex items-center justify-between">
@@ -26,14 +26,14 @@ function Projects() {
                                         </h3>
                                         <div className="flex items-center gap-2">
                                             <div
-                                                className="flex items-center gap-0.5 text-[0.7rem] font-light hover:translate-x-1">
+                                                className={`flex items-center gap-0.5 text-[0.7rem] font-light hover:translate-x-1 ${project.isRepoDisabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}>
                                                 <a href={project.github} target="_blank">
                                                     Repository
                                                 </a>
                                                 <PiCaretRight/>
                                             </div>
                                             <div
-                                                className="flex items-center gap-0.5 text-[0.7rem] font-light hover:translate-x-1">
+                                                className={`flex items-center gap-0.5 text-[0.7rem] font-light hover:translate-x-1 ${project.isDemoDisabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}>
                                                 <a href={project.link} target="_blank">
                                                     Demo
                                                 </a>

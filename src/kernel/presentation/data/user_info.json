@@ -61,10 +61,10 @@
       "title": "Hotel Management System",
       "technologies": "React, Tailwind, MongoDB, Express, Node.js",
       "description": "Developed a scalable Hotel Reservation Platform using Spring Boot, PostgreSQL, Spring Security, JWT, RBAC, Stripe Checkout & Webhooks, JPA/Hibernate, Cron Scheduler, and the Decorator Design Pattern.",
-      "github": "#",
+      "github": "https://github.com/sourav-harsh/mmt-clone-client",
       "link": "https://mmt-clone-client.vercel.app/",
       "isDemoDisabled": false,
-      "isRepoDisabled": true
+      "isRepoDisabled": false
     }, {
       "title": "Youtube Clone",
       "description": "Developed to learn full-stack web development use MERN stack to build the entire project. Also done SRP which used the JWT to authentication.",

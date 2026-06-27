@@ -62,8 +62,8 @@
       "technologies": "React, Tailwind, MongoDB, Express, Node.js",
       "description": "Developed a scalable Hotel Reservation Platform using Spring Boot, PostgreSQL, Spring Security, JWT, RBAC, Stripe Checkout & Webhooks, JPA/Hibernate, Cron Scheduler, and the Decorator Design Pattern.",
       "github": "#",
-      "link": "#",
-      "isDemoDisabled": true,
+      "link": "https://mmt-clone-client.vercel.app/",
+      "isDemoDisabled": false,
       "isRepoDisabled": true
     }, {
       "title": "Youtube Clone",

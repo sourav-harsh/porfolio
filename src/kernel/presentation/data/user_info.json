@@ -74,9 +74,17 @@
       "isDemoDisabled": false,
       "isRepoDisabled": false
     },{
+      "title": "Pipeline Builder",
+      "description": "Developed to learn full-stack web development using ReactJS and FastAPI. It will check is there and DAG in the graph and tell you the node and edge.",
+      "technologies": "React, Tailwind, FastAPI",
+      "github": "https://github.com/sourav-harsh/pipeline-builder-client",
+      "link": "https://pipeline-builder-client.vercel.app/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
+    },{
       "title": "AI Summary Generator Extension",
       "description": "Developed to learn chrome extension development.It will generate summary of the page by using your APIKey of OpenAI.",
-      "technologies": "React, Tailwind, MongoDB, Express, Node.js",
+      "technologies": "React, Tailwind",
       "github": "https://github.com/sourav-harsh/AI_Summary_Generation_extension",
       "link": "#",
       "isDemoDisabled": true,

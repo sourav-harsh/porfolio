@@ -69,7 +69,7 @@
       "title": "Youtube Clone",
       "description": "Developed to learn full-stack web development use MERN stack to build the entire project. Also done SRP which used the JWT to authentication.",
       "technologies": "React, Tailwind, MongoDB, Express, Node.js",
-      "github": "https://github.com/sourav-harsh/youtub-clone",
+      "github": "https://github.com/sourav-harsh/youtub-client-clone",
       "link": "https://youtub-client-clone.vercel.app",
       "isDemoDisabled": false,
       "isRepoDisabled": false

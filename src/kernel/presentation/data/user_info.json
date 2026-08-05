@@ -73,6 +73,14 @@
       "link": "https://youtub-client-clone.vercel.app",
       "isDemoDisabled": false,
       "isRepoDisabled": false
+    },{
+      "title": "AI Summary Generator Extension",
+      "description": "Developed to learn chrome extension development.It will generate summary of the page by using your APIKey of OpenAI.",
+      "technologies": "React, Tailwind, MongoDB, Express, Node.js",
+      "github": "https://github.com/sourav-harsh/AI_Summary_Generation_extension",
+      "link": "#",
+      "isDemoDisabled": true,
+      "isRepoDisabled": false
     },
     {
       "title": "My Portfolio",

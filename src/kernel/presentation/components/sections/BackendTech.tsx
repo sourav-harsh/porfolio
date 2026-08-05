@@ -3,7 +3,7 @@ import ShineContainer from "../shared/ShineContainer.tsx";
 import {FaDatabase, FaNodeJs} from "react-icons/fa";
 import {
     SiApachekafka,
-    SiExpress,
+    SiExpress, SiFastapi,
     SiJunit5,
     SiMinio,
     SiNeo4J,
@@ -74,6 +74,10 @@ function BackendTech() {
                 <ShineContainer classes="flex items-center gap-2">
                     <SiRedis />
                     Redis
+                </ShineContainer>
+                <ShineContainer classes="flex items-center gap-2">
+                    <SiFastapi />
+                    FastAPI
                 </ShineContainer>
                 <ShineContainer classes="flex items-center gap-2">
                     <CiMicrochip />

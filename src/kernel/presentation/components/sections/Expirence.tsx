@@ -14,7 +14,7 @@ function Expirence() {
             </div>
             <div className="mt-2 flex flex-col gap-4 pl-1.5 w-full h-28 overflow-y-scroll">
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 h-full">
                     <div className="w-[0.5px] rounded-xl dark:bg-gray-300/30 bg-gray-800"></div>
                     <div className="flex flex-col gap-4 w-full">
                         {info.experience?.map((exp, i) => (

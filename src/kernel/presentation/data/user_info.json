@@ -13,16 +13,13 @@
     "futureLearningSubTitle": "Areas I focus on to design and deliver robust applications, covering frontend, backend, database management, AI integration, workflow automation, and scalable deployments.",
     "futureLearning": [
       {
-        "title": "Spring Boot",
-        "description": "Learning Spring Boot to build backend services.",
-        "technologies": ""
-      },{
-        "title": "DevOps",
-        "description": "Learning DevOps to build backend services.",
-        "technologies": ""
-      },{
         "title": "AI",
         "description": "Learning AI to improve the application.",
+        "technologies": ""
+      },
+      {
+        "title": "DevOps",
+        "description": "Learning DevOps to deploy services.",
         "technologies": ""
       }
     ]
@@ -50,16 +47,24 @@
   ],
   "projects": [
     {
+      "title": "InsightFlow",
+      "description": "InsightFlow is a microservices-based analytics platform designed to process large CSV/Excel datasets asynchronously. The platform separates ingestion, processing, analytics, and reporting concerns so that expensive dataset processing does not block API requests.",
+      "technologies": "Java, SpringBoot, PostgreSQL,Micoservices, Event Driven Programming, Docker, ReactJS, RebbitMQ, Redis",
+      "github": "https://github.com/sourav-harsh/InsightFlow",
+      "link": "#",
+      "isDemoDisabled": true,
+      "isRepoDisabled": false
+    },  {
       "title": "Distributed Social Media",
       "description": "Developed a scalable Social Media Platform using Microservices, Spring Boot, Neo4j, Kafka, JWT, API Gateway, Kubernetes, and GKE.",
-      "technologies": "React, Tailwind, MongoDB, Express, Node.js",
+      "technologies": "Java, SpringBoot, Neo4j, Kafka, JWT, API Gateway, Kubernetes, GKE, Docker,",
       "github": "#",
       "link": "#",
       "isDemoDisabled": true,
       "isRepoDisabled": true
     }, {
       "title": "Hotel Management System",
-      "technologies": "React, Tailwind, MongoDB, Express, Node.js",
+      "technologies": "Java, SpringBoot, PostgreSQL, Spring Security, JWT, RBAC, Stripe Checkout & Webhooks, JPA/Hibernate, Cron Scheduler, Decorator Design Pattern, Docker,",
       "description": "Developed a scalable Hotel Reservation Platform using Spring Boot, PostgreSQL, Spring Security, JWT, RBAC, Stripe Checkout & Webhooks, JPA/Hibernate, Cron Scheduler, and the Decorator Design Pattern.",
       "github": "https://github.com/sourav-harsh/mmt-clone-client",
       "link": "https://mmt-clone-client.vercel.app/",
@@ -205,31 +210,25 @@
   ],
   "experience": [
     {
-      "position": "Software Engineer",
+      "position": "Software Engineer II",
       "company": "Yourkoder",
       "duration": "Mar 2024 - Jun 2024 (3 Months)",
-      "year": "2024",
+      "year": "2023-2026",
       "image": "ccci.webp",
       "descriptions": [
         "Completed an extensive training program in full-stack web development.",
         "Actively contributed to the ongoing development of a web application.",
         "Mentored by senior developers on best practices and code optimization."
       ]
-    },
-    {
-      "position": "Frontend Developer Intern",
-      "company": "Yourkoder",
-      "duration": "Nov 2019 - Dec 2019 (1 Month)",
-      "year": "2023",
-      "image": "spvttc.webp",
-      "descriptions": [
-        "Developed Python scripts to automate document score calculations.",
-        "Developed a company website as part of an ICT-related work immersion program."
-      ]
     }
   ],
   "certificates": [
     {
+      "title": "Spring Boot 0 to 100 Cohort 5.0 [AI + DevOps + System Design]",
+      "description": "Provided by Coding Shuttle",
+      "icon": "ibm",
+      "link": "https://app.codingshuttle.com/certificate/verify/SVYUAD20"
+    }, {
       "title": "System Design Cohort",
       "description": "Provided by ChaiCode",
       "icon": "ibm",

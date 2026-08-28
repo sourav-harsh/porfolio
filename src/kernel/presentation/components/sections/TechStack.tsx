@@ -14,6 +14,7 @@ function TechStack() {
                     <div className="flex items-center gap-2">
                         <FaTools className="dark:text-primary"/>
                         <h3 className="title">Tech Stack</h3>
+                        <h4>(40)</h4>
                     </div>
                 </div>
                 <div className="flex flex-col gap-2 mt-2 h-[20.5rem] overflow-y-scroll">

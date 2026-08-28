@@ -12,6 +12,7 @@ function Projects() {
                     <div className="flex items-center gap-1">
                         <PiProjectorScreenDuotone className="dark:text-primary" />
                         <h3 className="title">Projects</h3>
+                        <h4>({info.projects?.length})</h4>
                     </div>
                 </div>
                 <div className="mt-2 flex flex-col gap-3 h-[22.6rem] overflow-y-scroll pt-2">

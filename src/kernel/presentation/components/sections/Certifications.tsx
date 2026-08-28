@@ -11,6 +11,7 @@ function Certifications() {
                     <div className="flex items-center gap-1">
                         <GrCertificate className="dark:text-primary"/>
                         <h3 className="title">Certifications</h3>
+                        <h4>({info.certificates?.length})</h4>
                     </div>
                 </div>
                 <div className="mt-2 flex flex-col gap-2 h-80 overflow-y-scroll pt-2">

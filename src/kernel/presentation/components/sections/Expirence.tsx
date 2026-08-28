@@ -1,21 +1,29 @@
 import {PiBuildingOfficeDuotone} from "react-icons/pi";
 import Container from "../shared/Container.tsx";
+import { useState, useEffect } from "react";
 import info from "../../data/user_info.json";
 
 
 function Expirence() {
+    const totalExperience =
+        info.experience?.reduce(
+            (total, exp) => total + exp.yearExperience,
+            0
+        ) ?? 0;
+
     return (
         <Container>
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     <PiBuildingOfficeDuotone className="dark:text-primary"/>
                     <h3 className="title uppercase">Experience</h3>
+                    <h4>- {totalExperience} Yrs</h4>
                 </div>
             </div>
             <div className="mt-2 flex flex-col gap-4 pl-1.5 w-full h-60 overflow-y-scroll">
                 <div className="flex gap-4">
                     <div className="w-[0.8px] rounded-xl dark:bg-gray-300/20 bg-gray-800"></div>
-                    <div className="flex flex-col gap-5 w-full">
+                    <div className="flex flex-col gap-5 w-full" id="experience">
                         {info.experience?.map((exp, i) => (
                             <>
                                 <div className="flex items-start justify-between" id={`${exp.company}-${i}`}

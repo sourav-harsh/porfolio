@@ -57,7 +57,7 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
         <Container>
             <div id="dropdown-container" ref={componentRef}>
                 <div className="flex gap-4 w-full">
-                    <img src={`${info.main?.photo}` + (theme === 'dark' ? '_dark.png' : '.png')}
+                    <img src={`${info.main?.photo}` + (theme === 'dark' ? '.png' : '_dark.png')}
                          alt="profile pic of sourav" className="w-40 md:h-36 h-40 rounded-xl"/>
                     <div className="w-full dark:text-white text-black">
                         <div className="flex items-start justify-between">
@@ -67,15 +67,34 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
                                 <ToggleTheme switchTheme={switchTheme}/>
                             </div>
                         </div>
-                        <p className="md:text-xs text-[11px] font-normal flex items-center gap-1 mt-0.5 font-mono">
-                            <IoLocationSharp className="h-3.5"/>
-                            {info.main.location}
-                        </p>
-
-                        <div className="flex items-center justify-between md:mt-5 mt-2.5 ">
+                        <div className="dark:text-gray-100/90">
                             <p className="md:text-base text-xs font-stick">{info.main.role}</p>
+                            <p className="md:text-xs text-[11px] font-normal flex items-center gap-1 md:mt-1 mt-3 font-mono">
+                                <IoLocationSharp className="h-3.5"/>
+                                {info.main.location}
+                            </p>
+                        </div>
+
+
+                        <div className="md:flex items-center justify-between md:mt-4 mt-2.5 hidden">
+                            <p className="text-xs leading-5 dark:text-gray-200/80 font-mono">
+                                {info.main.description}
+                            </p>
+
+                        </div>
+                        <div className="md:flex items-center flex-wrap gap-2 mt-5 hidden">
+                            <a className="px-4 md:py-1 py-1.5 bg-white rounded text-xs font-semibold flex items-center gap-1 text-black cursor-pointer group"
+                               href={`mailto:${info.main.email}`}><IoMdMail size={18} className="group-hover:hidden"/>
+                                <TbBrandTelegram size={18} className="hidden group-hover:inline"/><p
+                                    className="md:inline hidden">{info.main.sendMailBtnTxt}</p></a>
+                            <a className="px-4 md:py-1.5 py-2.5 dark:bg-gray-400/50 bg-gray-900 text-white  rounded text-xs font-normal flex items-center gap-3 hover:gap-5 ease-in-out transition-all cursor-pointer"
+                               href={info.main.resumeLink} target="_blank">
+                                <div className="flex items-center gap-1"><BsFiletypePdf/><p
+                                    className="md:inline hidden">{info.main.resumeBtnTxt}</p></div>
+                                <div className="md:inline hidden"><MdOutlineFileDownload/></div>
+                            </a>
                             <button
-                                className="px-4 py-1 bg-blue-500 rounded text-xs text-white font-normal md:flex items-center gap-1 relative cursor-pointer  hidden"
+                                className="px-4 py-1 bg-blue-500 rounded text-xs text-white font-normal md:flex items-center gap-1 relative cursor-pointer  "
                                 onClick={handleLearningGoal}>
                                 <FaGraduationCap size={18}/>
                                 {info.main.learningGoalBtn}
@@ -112,55 +131,62 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
                                 }
                             </button>
                         </div>
-                        <div className="flex items-center flex-wrap gap-2 mt-5">
-                            <a className="px-4 md:py-1 py-1.5 bg-white rounded text-xs font-semibold flex items-center gap-1 text-black cursor-pointer group"
-                               href={`mailto:${info.main.email}`}><IoMdMail size={18} className="group-hover:hidden"/>
-                                <TbBrandTelegram size={18} className="hidden group-hover:inline"/><p
-                                    className="md:inline hidden">{info.main.sendMailBtnTxt}</p></a>
-                            <a className="px-4 md:py-1.5 py-2.5 dark:bg-gray-400/50 bg-gray-900 text-white  rounded text-xs font-normal flex items-center gap-3 hover:gap-5 ease-in-out transition-all cursor-pointer"
-                               href={info.main.resumeLink} target="_blank">
-                                <div className="flex items-center gap-1"><BsFiletypePdf/><p
-                                    className="md:inline hidden">{info.main.resumeBtnTxt}</p></div>
-                                <div className="md:inline hidden"><MdOutlineFileDownload/></div>
-                            </a>
-                        </div>
                     </div>
                 </div>
-                <button
-                    className="mt-2 text-white px-4 py-1 bg-blue-500 rounded text-xs font-normal flex items-center justify-between relative cursor-pointer w-full  md:hidden"
-                    onClick={handleLearningGoalMobileScreen}>
-                    <div className="flex items-center gap-1">
-                        <FaGraduationCap size={18}/>
-                        {info.main.learningGoalBtn}
+                <div className="md:hidden flex flex-col gap-5">
+
+                    <div className=" items-center justify-between md:mt-4 mt-2.5">
+                        <p className="text-xs leading-5 dark:text-gray-200/80 font-mono">
+                            {info.main.description}
+                        </p>
+
                     </div>
-                    <div className="border-l border-l-white pl-3 ml-3"><FaCaretDown/></div>
-                    {createPortal(<div className="fixed top-60 right-14 w-72 hidden md:hidden"
-                                       id="learningGoalDropdownMobileScreen">
-                        <div
-                            className="relative">
+                    <a className="px-4 md:py-1 py-1.5 bg-white rounded text-xs font-semibold flex items-center gap-1 text-black cursor-pointer group"
+                       href={`mailto:${info.main.email}`}><IoMdMail size={18} className="group-hover:hidden"/>
+                        <TbBrandTelegram size={18} className="hidden group-hover:inline"/><p
+                            className="">{info.main.sendMailBtnTxt}</p></a>
+                    <a className="px-4 md:py-1.5 py-2.5 dark:bg-gray-400/50 bg-gray-900 text-white  rounded text-xs font-normal flex items-center gap-3 hover:gap-5 ease-in-out transition-all cursor-pointer"
+                       href={info.main.resumeLink} target="_blank">
+                        <div className="flex items-center gap-1"><BsFiletypePdf/><p
+                            className="">{info.main.resumeBtnTxt}</p></div>
+                        <div className=""><MdOutlineFileDownload/></div>
+                    </a>
+                    <button
+                        className=" text-white px-4 py-1 bg-blue-500 rounded text-xs font-normal flex items-center justify-between relative cursor-pointer w-full "
+                        onClick={handleLearningGoalMobileScreen}>
+                        <div className="flex items-center gap-1">
+                            <FaGraduationCap size={18}/>
+                            {info.main.learningGoalBtn}
+                        </div>
+                        <div className="border-l border-l-white pl-3 ml-3"><FaCaretDown/></div>
+                        {createPortal(<div className="fixed top-60 right-14 w-72 hidden md:hidden"
+                                           id="learningGoalDropdownMobileScreen">
                             <div
-                                className="z-[99999999] rounded-xl p-5 flex flex-col h-max dark:bg-gray-300 bg-black/90 dark:text-black text-white">
+                                className="relative">
+                                <div
+                                    className="z-[99999999] rounded-xl p-5 flex flex-col h-max dark:bg-gray-300 bg-black/90 dark:text-black text-white">
 
-                                <p className="text-[0.6rem] font-semibold">
-                                    {info.main.futureLearningSubTitle}
-                                </p>
+                                    <p className="text-[0.6rem] font-semibold">
+                                        {info.main.futureLearningSubTitle}
+                                    </p>
 
-                                <div className="pl-3">
-                                    <ol className="list-disc ">
-                                        {info.main.futureLearning?.map((item, index) => (
-                                            <li key={index}
-                                                className="text-xs font-normal mt-2 dark:marker:text-blue-500 marker:text-yellow-500">
-                                                <span className="font-semibold underline">{item.title}</span>
-                                                -{item.description}
-                                            </li>
-                                        ))}
-                                    </ol>
+                                    <div className="pl-3">
+                                        <ol className="list-disc ">
+                                            {info.main.futureLearning?.map((item, index) => (
+                                                <li key={index}
+                                                    className="text-xs font-normal mt-2 dark:marker:text-blue-500 marker:text-yellow-500">
+                                                    <span className="font-semibold underline">{item.title}</span>
+                                                    -{item.description}
+                                                </li>
+                                            ))}
+                                        </ol>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>, document.body)}
+                        </div>, document.body)}
 
-                </button>
+                    </button>
+                </div>
             </div>
         </Container>
     );

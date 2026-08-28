@@ -45,7 +45,7 @@
 
 /* 6. Custom Class Directives */
 .title {
-    @apply md:text-lg text-lg font-bold;
+    @apply md:text-lg text-lg font-semibold uppercase;
 }
 
 :root {

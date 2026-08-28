@@ -1,6 +1,8 @@
 import Container from "../shared/Container.tsx";
 import {PiCaretRight, PiProjectorScreenDuotone} from "react-icons/pi";
+import { FiGithub } from "react-icons/fi";
 import info from "../../data/user_info.json";
+import {FaExternalLinkAlt} from "react-icons/fa";
 
 function Projects() {
     return (
@@ -8,16 +10,16 @@ function Projects() {
             <Container>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <PiProjectorScreenDuotone color="oklch(0.78 0.13 215)" />
+                        <PiProjectorScreenDuotone className="dark:text-primary" />
                         <h3 className="title">Projects</h3>
                     </div>
                 </div>
-                <div className="mt-2 flex flex-col gap-3 h-[22.6rem] overflow-y-scroll">
+                <div className="mt-2 flex flex-col gap-3 h-[22.6rem] overflow-y-scroll pt-2">
                     {info.projects?.map((project, index) =>
                         (
 
                             <div id={`${index}`} key={project.title}
-                                 className="flex items-center justify-between dark:bg-white/10 bg-black/10 p-2 rounded-lg hover:-translate-y-1 transition-all ease-in-out"
+                                 className="flex items-center justify-between dark:bg-gray-500/10 bg-black/10 p-2 rounded-lg hover:-translate-y-1 transition-all ease-in-out border border-black/10 dark:border-white/10 hover:border-primary"
                             >
                                 <div className="">
                                     <div className="flex items-center justify-between">
@@ -26,18 +28,16 @@ function Projects() {
                                         </h3>
                                         <div className="flex items-center gap-2">
                                             <div
-                                                className={`flex items-center gap-0.5 text-[0.7rem] font-light hover:translate-x-1 ${project.isRepoDisabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}>
+                                                className={`flex items-center gap-0.5 text-[0.7rem] font-light hover:text-primary ${project.isRepoDisabled ? 'hidden' : ''}`}>
                                                 <a href={project.github} target="_blank">
-                                                    Repository
+                                                <FiGithub size={15}  />
                                                 </a>
-                                                <PiCaretRight/>
                                             </div>
                                             <div
-                                                className={`flex items-center gap-0.5 text-[0.7rem] font-light hover:translate-x-1 ${project.isDemoDisabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}>
+                                                className={`flex items-center gap-0.5 text-[0.7rem] font-light ${project.isDemoDisabled ? 'hidden' : ''}`}>
                                                 <a href={project.link} target="_blank">
-                                                    Demo
+                                                    <FaExternalLinkAlt size={13}  className="dark:text-gray-400 hover:text-primary"/>
                                                 </a>
-                                                <PiCaretRight/>
                                             </div>
                                         </div>
                                     </div>

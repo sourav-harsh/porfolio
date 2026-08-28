@@ -7,7 +7,7 @@ import {BsClaude} from "react-icons/bs";
 function ToolsAndTech() {
     return (
         <div>
-            <h3 className="text-base font-bold">Tools & Technologies</h3>
+            <h3 className="text-base font-semibold font-mono">Tools & Technologies</h3>
             <div className="flex flex-wrap gap-2 mt-2">
                 <ShineContainer classes="flex items-center gap-2">
                     <SiPostman />

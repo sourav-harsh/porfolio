@@ -13,7 +13,7 @@ function Social() {
             <Container>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <IoShareSocialSharp color="oklch(0.78 0.13 215)" />
+                        <IoShareSocialSharp className="dark:text-primary" />
                         <h3 className="title">Social</h3>
                     </div>
                 </div>
@@ -21,7 +21,7 @@ function Social() {
                     {info.socials?.map((social,index) =>
                         (
                             <a id={`${index}`} key={social.title} href={social.url}
-                               className="flex items-center justify-between dark:bg-white/10 bg-black/10 p-2 rounded-lg hover:translate-x-2 transition-all ease-in-out cursor-pointer"
+                               className="flex items-center justify-between dark:bg-gray-400/10 bg-black/10 p-2 rounded-lg hover:translate-x-2 transition-all ease-in-out cursor-pointer"
                                target="_blank"
                             >
                                 <div className="flex items-center gap-2">

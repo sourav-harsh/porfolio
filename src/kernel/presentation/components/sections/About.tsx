@@ -7,10 +7,10 @@ const About = () => {
         <Container>
             <div>
                 <div className="flex items-center gap-2 mb-2">
-                    <FaUser color="oklch(0.78 0.13 215)"/>
-                    <h2 className="title">About</h2>
+                    <FaUser className="dark:text-primary"/>
+                    <h2 className="title uppercase">About</h2>
                 </div>
-                <p className="text-sm leading-7.5 text-gray-200/80 font-mono">
+                <p className="text-sm leading-7.5 dark:text-gray-200/80 font-mono">
                     {info.main.description}
                 </p>
             </div>

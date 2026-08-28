@@ -8,8 +8,8 @@ function Expirence() {
         <Container>
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <PiBuildingOfficeDuotone color="oklch(0.78 0.13 215)"/>
-                    <h3 className="title">Experience</h3>
+                    <PiBuildingOfficeDuotone className="dark:text-primary"/>
+                    <h3 className="title uppercase">Experience</h3>
                 </div>
             </div>
             <div className="mt-2 flex flex-col gap-4 pl-1.5 w-full h-60 overflow-y-scroll">
@@ -26,15 +26,15 @@ function Expirence() {
                                                 className="absolute -left-[1.35rem] top-1.5 w-2.5 h-2.5 rounded-full dark:bg-primary bg-gray-800"></div>
                                             <h3>{exp.position}</h3>
                                         </div>
-                                        <h3 className="text-primary">{exp.company}</h3>
+                                        <h3 className="dark:text-primary">{exp.company}</h3>
                                     </div>
-                                    <div className="text-gray-300 text-xs font-mono">{exp.year}</div>
+                                    <div className="dark:text-gray-300 text-xs font-mono">{exp.year}</div>
                                 </div>
                                 <div className="flex flex-col gap-2 pl-2">
                                     {exp.descriptions.map((desc, i) => (
                                         <div className="flex items-start gap-2">
                                             <div className="w-3 h-1.5 rounded-full dark:bg-primary bg-gray-800 mt-1"></div>
-                                            <div key={i} className="text-gray-200/80 text-xs font-mono">{desc}</div>
+                                            <div key={i} className="dark:text-gray-200/80 text-xs font-mono">{desc}</div>
                                         </div>
                                     ))}
                                 </div>

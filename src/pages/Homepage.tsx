@@ -419,21 +419,21 @@ function Homepage() {
                     <div className="md:flex md:items-center md:justify-center w-full">
                         <div className="md:w-[50rem] h-full rounded-2xl">
                             <div
-                                className="md:grid md:grid-cols-2 md:gap-2 md:items-stretch md:justify-stretch dark:text-white text-black">
+                                className="md:grid md:grid-cols-2 md:gap-3 md:items-stretch md:justify-stretch dark:text-white text-black">
                                 <div className="col-span-2 row-span-2">
                                     <Hero switchTheme={switchTheme} theme={theme}/>
                                     <div className="md:hidden mt-2">
                                         <About/>
                                     </div>
                                 </div>
-                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-2 h-full md:mt-0 mt-2">
+                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-3 h-full md:mt-0 mt-2">
                                     <div className="md:inline hidden">
                                         <About/>
                                     </div>
                                     <TechStack/>
                                     <Projects/>
                                 </div>
-                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-2 h-full md:mt-0 mt-2">
+                                <div className="md:col-span-1 md:row-span-4 flex flex-col gap-3 h-full md:mt-0 mt-2">
                                     <Expirence/>
                                     <Education/>
                                     <Certifications/>

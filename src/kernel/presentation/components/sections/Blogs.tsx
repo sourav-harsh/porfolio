@@ -22,8 +22,10 @@ const Blogs = () => {
                 </div>
 
              <div className="flex flex-col gap-4">
-                 {posts?.map((post, index) =>
+                 {posts?.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).filter((_,index) => index < 2).map((post, index) =>
                      (
+                         <Link    key={post.slug}
+                                  to={`/blog/${post.slug}`}>
 
                          <div id={`${index}`} key={post.title}
                               className="flex items-center justify-between dark:bg-gray-500/10 bg-black/10 p-2 rounded-lg hover:-translate-y-1 transition-all ease-in-out border border-black/10 dark:border-white/10 hover:border-primary"
@@ -61,6 +63,7 @@ const Blogs = () => {
                                  </p>
                              </div>
                          </div>
+                         </Link>
                      )
                  )}
              </div>

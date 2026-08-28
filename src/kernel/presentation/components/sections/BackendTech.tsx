@@ -21,7 +21,7 @@ import {VscMcp} from "react-icons/vsc";
 function BackendTech() {
     return (
         <div>
-            <h3 className="text-base font-bold">Backend Development</h3>
+            <h3 className="text-base font-semibold font-mono">Backend Development</h3>
             <div className="flex flex-wrap gap-2 mt-2">
                 <ShineContainer classes="flex items-center gap-2">
                     <SiQuarkus />

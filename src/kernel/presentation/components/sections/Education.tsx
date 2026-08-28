@@ -8,23 +8,23 @@ function Expirence() {
         <Container>
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <GiPostOffice />
+                    <GiPostOffice color="oklch(0.78 0.13 215)" />
                     <h3 className="title">Education</h3>
                 </div>
             </div>
             <div className="mt-2 flex flex-col gap-4 pl-1.5 w-full h-36 overflow-y-scroll">
 
                 <div className="flex gap-4">
-                    <div className="w-[0.5px] rounded-xl dark:bg-gray-300/30 bg-gray-800"></div>
+                    <div className="w-[0.8px] rounded-xl dark:bg-gray-300/30 bg-gray-800"></div>
                     <div className="flex flex-col gap-4 w-full">
                         {info.education?.map(exp => (
                             <div className="flex items-start justify-between">
                                 <div>
                                     <div className="relative text-sm">
-                                        <div className="absolute -left-[1.37rem] top-1.5 w-3 h-3 rounded-full dark:bg-gray-300/60 bg-gray-800"></div>
+                                        <div className="absolute -left-[1.37rem] top-1.5 w-2.5 h-2.5 rounded-full dark:bg-primary bg-gray-800"></div>
                                         <h3>{exp.school}</h3>
                                     </div>
-                                    <h4 className="text-xs">{exp.degree}</h4>
+                                    <h4 className="text-xs text-gray-200/80">{exp.degree}</h4>
                                 </div>
                                 <div className="text-gray-300 text-xs font-mono">{exp.duration}</div>
                             </div>

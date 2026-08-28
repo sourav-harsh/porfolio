@@ -13,7 +13,7 @@ function Social() {
             <Container>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <IoShareSocialSharp/>
+                        <IoShareSocialSharp color="oklch(0.78 0.13 215)" />
                         <h3 className="title">Social</h3>
                     </div>
                 </div>

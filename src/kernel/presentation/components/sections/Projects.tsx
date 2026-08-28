@@ -8,7 +8,7 @@ function Projects() {
             <Container>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <PiProjectorScreenDuotone/>
+                        <PiProjectorScreenDuotone color="oklch(0.78 0.13 215)" />
                         <h3 className="title">Projects</h3>
                     </div>
                 </div>

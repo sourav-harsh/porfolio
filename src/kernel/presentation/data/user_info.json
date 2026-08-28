@@ -216,9 +216,10 @@
       "year": "2023-2026",
       "image": "ccci.webp",
       "descriptions": [
-        "Completed an extensive training program in full-stack web development.",
-        "Actively contributed to the ongoing development of a web application.",
-        "Mentored by senior developers on best practices and code optimization."
+        "Designed and shipped microservices-based backend systems using Spring Boot, Kafka, and PostgreSQL.",
+        "Built event-driven processing pipelines that keep heavy workloads off the request path.",
+        "Implemented secure authentication and authorization with JWT, OAuth, and role-based access control.",
+        "Contributed to system design decisions across caching, messaging, and distributed data layers."
       ]
     }
   ],

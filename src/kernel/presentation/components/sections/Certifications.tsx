@@ -9,7 +9,7 @@ function Certifications() {
             <Container>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <GrCertificate />
+                        <GrCertificate color="oklch(0.78 0.13 215)" />
                         <h3 className="title">Certifications</h3>
                     </div>
                 </div>

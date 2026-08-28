@@ -12,7 +12,7 @@ function TechStack() {
             <div>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <FaTools />
+                        <FaTools color="oklch(0.78 0.13 215)" />
                         <h3 className="title">Tech Stack</h3>
                     </div>
                 </div>

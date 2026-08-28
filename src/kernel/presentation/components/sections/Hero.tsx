@@ -61,19 +61,19 @@ const Hero = ({switchTheme, theme}: ToggleThemeProps) => {
                          alt="profile pic of sourav" className="w-40 md:h-36 h-40 rounded-xl"/>
                     <div className="w-full dark:text-white text-black">
                         <div className="flex items-start justify-between">
-                            <h2 className="md:text-2xl text-base font-bold flex items-center gap-1">{info.main?.name}
+                            <h2 className="md:text-2xl xl:text-3xl text-base font-bold font-stick flex items-center gap-1">{info.main?.name}
                                 <MdVerified color="#3366ff"/></h2>
-                            <div className="md:-mt-3 md:static absolute md:-top-5 -top-3 md:-right-5 -right-3">
+                            <div className="md:-mt-3 md:static absolute md:-top-5 -top-3 md:-right-5 -right-3 ">
                                 <ToggleTheme switchTheme={switchTheme}/>
                             </div>
                         </div>
-                        <p className="md:text-xs text-[11px] font-normal flex items-center gap-1 mt-0.5">
+                        <p className="md:text-xs text-[11px] font-normal flex items-center gap-1 mt-0.5 font-mono">
                             <IoLocationSharp className="h-3.5"/>
                             {info.main.location}
                         </p>
 
                         <div className="flex items-center justify-between md:mt-5 mt-2.5 ">
-                            <p className="md:text-base text-xs">{info.main.role}</p>
+                            <p className="md:text-base text-xs font-stick">{info.main.role}</p>
                             <button
                                 className="px-4 py-1 bg-blue-500 rounded text-xs text-white font-normal md:flex items-center gap-1 relative cursor-pointer  hidden"
                                 onClick={handleLearningGoal}>

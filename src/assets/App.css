@@ -1,22 +1,56 @@
+/* 1. Correct Google Fonts Import Path */
+@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght,ROND@100..900,0..100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kenia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@200..800&display=swap');
+
+/* 2. Core Tailwind Framework Initialize */
 @import "tailwindcss";
+
+/* 3. Dark Mode Flag Configuration */
 @custom-variant dark (&:where(.dark, .dark *));
 
-
-@theme{
+/* 4. Tailwind Theme Utility Registration */
+@theme {
     --animate-shine: shine 1s linear infinite;
 
-    @keyframes shine {
-        0% {
-            transform: translate(150%, 150%) rotate(90deg);
-            opacity: 1;
-        }
+    /* These tokens immediately unlock utility classes like font-rubik, font-henny, etc. */
+    --font-monsieur: "Cookie", cursive;
+    --font-ephesis: "Ephesis", cursive;
+    --font-swanky: "Fontdiner Swanky", serif;
+    --font-kenia: "Kenia", sans-serif;
+    --font-doto: "Doto", sans-serif;
+    --font-wallpoet: "Wallpoet", sans-serif;
+    --font-stick: "Stick No Bills", sans-serif;
+    --color-glow: var(--glow);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+}
 
-        100% {
-            transform: translate(-150%, -150%) rotate(90deg);
-        }
+/* 5. Custom Animation Frames (Moved outside of @theme) */
+@keyframes shine {
+    0% {
+        transform: translate(150%, 150%) rotate(90deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-150%, -150%) rotate(90deg);
     }
 }
 
-.title{
-    @apply md:text-lg text-lg font-bold
+/* 6. Custom Class Directives */
+.title {
+    @apply md:text-lg text-lg font-bold;
+}
+
+:root {
+    --glow: oklch(0.78 0.13 215 / 18%);
+    --muted-foreground: oklch(0.66 0.02 255);
+    --foreground: oklch(0.95 0.008 250);
+    --primary: oklch(0.78 0.13 215);
 }

@@ -8,27 +8,37 @@ function Expirence() {
         <Container>
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <PiBuildingOfficeDuotone/>
+                    <PiBuildingOfficeDuotone color="oklch(0.78 0.13 215)"/>
                     <h3 className="title">Experience</h3>
                 </div>
             </div>
-            <div className="mt-2 flex flex-col gap-4 pl-1.5 w-full h-28 overflow-y-scroll">
-
-                <div className="flex gap-4 h-full">
-                    <div className="w-[0.5px] rounded-xl dark:bg-gray-300/30 bg-gray-800"></div>
-                    <div className="flex flex-col gap-4 w-full">
+            <div className="mt-2 flex flex-col gap-4 pl-1.5 w-full h-60 overflow-y-scroll">
+                <div className="flex gap-4">
+                    <div className="w-[0.8px] rounded-xl dark:bg-gray-300/20 bg-gray-800"></div>
+                    <div className="flex flex-col gap-5 w-full">
                         {info.experience?.map((exp, i) => (
-                            <div className="flex items-start justify-between" id={`${exp.company}-${i}`} key={`${exp.company}-${i}-${exp.year}`}>
-                                <div>
-                                    <div className="relative">
-                                        <div
-                                            className="absolute -left-[1.35rem] top-1.5 w-2.5 h-2.5 rounded-full dark:bg-gray-300/60 bg-gray-800"></div>
-                                        <h3>{exp.position}</h3>
+                            <>
+                                <div className="flex items-start justify-between" id={`${exp.company}-${i}`}
+                                     key={`${exp.company}-${i}-${exp.year}`}>
+                                    <div>
+                                        <div className="relative">
+                                            <div
+                                                className="absolute -left-[1.35rem] top-1.5 w-2.5 h-2.5 rounded-full dark:bg-primary bg-gray-800"></div>
+                                            <h3>{exp.position}</h3>
+                                        </div>
+                                        <h3 className="text-primary">{exp.company}</h3>
                                     </div>
-                                    <h3>{exp.company}</h3>
+                                    <div className="text-gray-300 text-xs font-mono">{exp.year}</div>
                                 </div>
-                                <div className="text-gray-300 text-xs font-mono">{exp.year}</div>
-                            </div>
+                                <div className="flex flex-col gap-2 pl-2">
+                                    {exp.descriptions.map((desc, i) => (
+                                        <div className="flex items-start gap-2">
+                                            <div className="w-3 h-1.5 rounded-full dark:bg-primary bg-gray-800 mt-1"></div>
+                                            <div key={i} className="text-gray-200/80 text-xs font-mono">{desc}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
                         ))}
                     </div>
                 </div>

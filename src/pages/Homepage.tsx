@@ -54,133 +54,7 @@ function Homepage() {
         },
         "detectRetina": true,
         "duration": 0,
-        "fpsLimit": 120,
-        "interactivity": {
-            "detectsOn": "window",
-            "events": {
-                "onClick": {
-                    "enable": true,
-                    "mode": "push"
-                },
-                "onDiv": {
-                    "enable": false,
-                    "type": "circle"
-                },
-                "onHover": {
-                    "enable": true,
-                    "mode": "grab",
-                    "parallax": {
-                        "enable": true,
-                        "force": 60,
-                        "smooth": 10
-                    }
-                },
-                "resize": {
-                    "delay": 0.5,
-                    "enable": true
-                }
-            },
-            "modes": {
-                "trail": {
-                    "delay": 1,
-                    "pauseOnStop": false,
-                    "quantity": 1
-                },
-                "attract": {
-                    "distance": 200,
-                    "duration": 0.4,
-                    "easing": "ease-out-quad",
-                    "factor": 1,
-                    "maxSpeed": 50,
-                    "speed": 1
-                },
-                "bounce": {
-                    "distance": 200
-                },
-                "bubble": {
-                    "distance": 400,
-                    "duration": 2,
-                    "mix": false,
-                    "opacity": 0.8,
-                    "size": 40,
-                    "divs": {
-                        "distance": 200,
-                        "duration": 0.4,
-                        "mix": false,
-                        "selectors": {}
-                    }
-                },
-                "connect": {
-                    "distance": 80,
-                    "links": {
-                        "opacity": 0.5
-                    },
-                    "radius": 60
-                },
-                "grab": {
-                    "distance": 400,
-                    "links": {
-                        "blink": false,
-                        "consent": false,
-                        "opacity": 1
-                    }
-                },
-                "push": {
-                    "default": true,
-                    "groups": [],
-                    "quantity": 4,
-                    "particles": {}
-                },
-                "remove": {
-                    "quantity": 2
-                },
-                "repulse": {
-                    "distance": 200,
-                    "duration": 0.4,
-                    "factor": 100,
-                    "speed": 1,
-                    "maxSpeed": 50,
-                    "easing": "ease-out-quad",
-                    "divs": {
-                        "distance": 200,
-                        "duration": 0.4,
-                        "factor": 100,
-                        "speed": 1,
-                        "maxSpeed": 50,
-                        "easing": "ease-out-quad",
-                        "selectors": {}
-                    }
-                },
-                "slow": {
-                    "factor": 3,
-                    "radius": 200
-                },
-                "particle": {
-                    "replaceCursor": false,
-                    "pauseOnStop": false,
-                    "stopDelay": 0
-                },
-                "light": {
-                    "area": {
-                        "gradient": {
-                            "start": {
-                                "value": "#ffffff"
-                            },
-                            "stop": {
-                                "value": "#000000"
-                            }
-                        },
-                        "radius": 1000
-                    },
-                    "shadow": {
-                        "color": {
-                            "value": "#000000"
-                        },
-                        "length": 2000
-                    }
-                }
-            }
-        },
+        "fpsLimit": 220,
         "manualParticles": [],
         "particles": {
             "bounce": {
@@ -217,7 +91,7 @@ function Homepage() {
                     "h": {
                         "count": 0,
                         "enable": false,
-                        "speed": 1,
+                        "speed": 4,
                         "decay": 0,
                         "delay": 0,
                         "sync": true,
@@ -226,7 +100,7 @@ function Homepage() {
                     "s": {
                         "count": 0,
                         "enable": false,
-                        "speed": 1,
+                        "speed": 4,
                         "decay": 0,
                         "delay": 0,
                         "sync": true,
@@ -235,7 +109,7 @@ function Homepage() {
                     "l": {
                         "count": 0,
                         "enable": false,
-                        "speed": 1,
+                        "speed": 4,
                         "decay": 0,
                         "delay": 0,
                         "sync": true,
@@ -359,7 +233,7 @@ function Homepage() {
             "size": {
                 "value": {
                     "min": 1,
-                    "max": 10
+                    "max": 3
                 },
                 "animation": {
                     "count": 0,
@@ -459,11 +333,11 @@ function Homepage() {
                 "value": 0,
                 "animation": {
                     "enable": false,
-                    "speed": 0,
+                    "speed": 5,
                     "decay": 0,
                     "sync": false
                 },
-                "direction": "clockwise",
+                "direction": "anti-clockwise",
                 "path": false
             },
             "orbit": {
@@ -483,12 +357,12 @@ function Homepage() {
                 "width": 1
             },
             "links": {
-                "blink": false,
+                "blink": true,
                 "color": {
                     "value": `${theme === 'dark' ? '#ffffff' : '#0d0d0d'}`,
                 },
                 "consent": false,
-                "distance": 150,
+                "distance": 50,
                 "enable": true,
                 "frequency": 1,
                 "opacity": 0.4,
@@ -518,7 +392,7 @@ function Homepage() {
         "pauseOnBlur": true,
         "pauseOnOutsideViewport": true,
         "responsive": [],
-        "smooth": false,
+        "smooth": true,
         "style": {},
         "themes": [],
         "zLayers": 100,

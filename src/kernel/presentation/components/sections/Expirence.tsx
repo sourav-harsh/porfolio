@@ -1,6 +1,5 @@
 import {PiBuildingOfficeDuotone} from "react-icons/pi";
 import Container from "../shared/Container.tsx";
-import { useState, useEffect } from "react";
 import info from "../../data/user_info.json";
 
 

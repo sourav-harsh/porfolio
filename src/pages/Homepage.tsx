@@ -1,7 +1,5 @@
-import {useContext, useEffect, useState} from "react";
-import {loadSlim} from "@tsparticles/slim";
+import {useContext} from "react";
 import Hero from "../kernel/presentation/components/sections/Hero.tsx";
-import type {ISourceOptions} from "@tsparticles/engine";
 import {AppContext} from "../kernel/core/AppContext.tsx";
 
 import Blogs from "../kernel/presentation/components/sections/Blogs.tsx";

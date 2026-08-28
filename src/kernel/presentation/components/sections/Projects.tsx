@@ -1,5 +1,5 @@
 import Container from "../shared/Container.tsx";
-import {PiCaretRight, PiProjectorScreenDuotone} from "react-icons/pi";
+import { PiProjectorScreenDuotone} from "react-icons/pi";
 import { FiGithub } from "react-icons/fi";
 import info from "../../data/user_info.json";
 import {FaExternalLinkAlt} from "react-icons/fa";

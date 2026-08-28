@@ -1,10 +1,8 @@
-import info from "../../data/user_info.json";
 import { LiaBlogSolid } from "react-icons/lia";
 import {Link} from "react-router-dom";
 import Container from "../shared/Container.tsx";
 import {getAllPosts} from "../blogs/utils/blog";
 import {FaExternalLinkAlt} from "react-icons/fa";
-import {FiGithub} from "react-icons/fi";
 import {CalendarDays, Clock} from "lucide-react";
 
 const Blogs = () => {

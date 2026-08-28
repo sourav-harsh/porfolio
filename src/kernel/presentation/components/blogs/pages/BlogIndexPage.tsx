@@ -40,7 +40,6 @@ function BlogIndexPage({switchTheme}: ToggleThemeProps) {
                     <Link
                         key={post.slug}
                         to={`/blog/${post.slug}`}
-                        params={{slug: post.slug}}
                         className="block rounded-2xl border border-gray-600 dark:bg-card/80 bg-card/20 p-6 backdrop-blur-sm transition-all hover:border-primary/40 hover:shadow-[0_0_50px_-20px_var(--color-glow)]"
                     >
                         <h2 className="font-display text-xl font-semibold dark:text-foreground">

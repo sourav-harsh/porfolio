@@ -1,11 +1,6 @@
-import React from 'react';
 import { GitHubCalendar } from 'react-github-calendar';
 
-interface ContributionGridProps {
-    username: string;
-}
-
-function GithubContributionGrid({username}) {
+function GithubContributionGrid({username}: {username: string}) {
     if (!username) return null;
 
     return (

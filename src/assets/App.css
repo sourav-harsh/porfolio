@@ -26,10 +26,27 @@
     --font-doto: "Doto", sans-serif;
     --font-wallpoet: "Wallpoet", sans-serif;
     --font-stick: "Stick No Bills", sans-serif;
-    --color-glow: var(--glow);
-    --color-muted-foreground: var(--muted-foreground);
+    --color-background: var(--background);
     --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
     --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-glow: var(--glow);
+
 }
 
 /* 5. Custom Animation Frames (Moved outside of @theme) */
@@ -49,8 +66,118 @@
 }
 
 :root {
-    --glow: oklch(0.78 0.13 215 / 18%);
-    --muted-foreground: oklch(0.66 0.02 255);
-    --foreground: oklch(0.95 0.008 250);
+    --radius: 0.875rem;
+    /* Dark (default) constellation palette */
+    --background: oklch(0.115 0.018 264);
+    --foreground: #000;
+    --card: oklch(0.165 0.02 264);
+    --card-foreground: oklch(0.95 0.008 250);
+    --card-code-foreground: oklch(0.95 0.008 250);
+    --popover: oklch(0.165 0.02 264);
+    --popover-foreground: oklch(0.95 0.008 250);
     --primary: oklch(0.78 0.13 215);
+    --primary-foreground: oklch(0.15 0.03 264);
+    --secondary: oklch(0.21 0.025 264);
+    --secondary-foreground: oklch(0.9 0.01 250);
+    --muted: oklch(0.21 0.025 264);
+    --muted-foreground: oklch(0.66 0.02 255);
+    --accent: oklch(0.24 0.04 230);
+    --accent-foreground: oklch(0.85 0.08 215);
+    --destructive: oklch(0.65 0.2 25);
+    --destructive-foreground: oklch(0.97 0.005 250);
+    --border: oklch(1 0 0 / 9%);
+    --input: oklch(1 0 0 / 14%);
+    --ring: oklch(0.78 0.13 215);
+    --glow: oklch(0.78 0.13 215 / 18%);
+}
+
+.dark{
+    --foreground: oklch(0.95 0.008 250);
+}
+
+/* Blog prose styling */
+@utility prose-blog {
+    & h2 {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 2.25rem;
+        margin-bottom: 0.75rem;
+        color: var(--color-foreground);
+    }
+    & h3 {
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 1.75rem;
+        margin-bottom: 0.5rem;
+        color: var(--color-foreground);
+    }
+    & p {
+        margin-bottom: 1.1rem;
+        line-height: 1.8;
+        color: var(--color-muted-foreground);
+    }
+    & a {
+        color: var(--color-primary);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+    & ul,
+    & ol {
+        margin-bottom: 1.1rem;
+        padding-left: 1.4rem;
+        color: var(--color-muted-foreground);
+        line-height: 1.8;
+    }
+    & ul {
+        list-style: disc;
+    }
+    & ol {
+        list-style: decimal;
+    }
+    & li {
+        margin-bottom: 0.35rem;
+    }
+    &  strong {
+        color: var(--color-foreground);
+        font-weight: 600;
+    }
+    & code {
+        font-family: var(--font-mono);
+        font-size: 0.85em;
+        background: var(--color-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: 0.35rem;
+        padding: 0.15em 0.4em;
+        color: var(--color-accent-foreground);
+    }
+    & pre {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        line-height: 1.7;
+        background: var(--color-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: 1rem 1.25rem;
+        overflow-x: auto;
+        margin-bottom: 1.25rem;
+    }
+    & pre code {
+        background: transparent;
+        border: none;
+        padding: 0;
+        color: var(--card-code-foreground);
+    }
+    & blockquote {
+        border-left: 3px solid var(--color-primary);
+        padding-left: 1rem;
+        margin-bottom: 1.1rem;
+        font-style: italic;
+        color: var(--color-muted-foreground);
+    }
+    & hr {
+        border-color: var(--color-border);
+        margin: 2rem 0;
+    }
 }

@@ -20,7 +20,7 @@ function BlogPostPage({switchTheme}: ToggleThemeProps) {
 
                 <Link
                     to="/blogs"
-                    className="mt-4 inline-flex items-center gap-2 text-primary"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:dark:text-foreground hover:text-gray-800"
                 >
                     <ArrowLeft className="h-4 w-4" />
                     Back to blog
@@ -70,7 +70,7 @@ function BlogPostPage({switchTheme}: ToggleThemeProps) {
                         {post.tags.map((tag) => (
                             <span
                                 key={tag}
-                                className="rounded-full bg-accent px-3 py-1 font-mono text-xs"
+                                className="rounded-full bg-accent px-3 py-1 font-mono text-xs text-primary"
                             >
                                 {tag}
                             </span>

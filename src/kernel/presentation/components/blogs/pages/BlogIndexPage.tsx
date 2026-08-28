@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import {CalendarDays, Clock, PenLine,} from "lucide-react";
+import {ArrowLeft, CalendarDays, Clock, PenLine,} from "lucide-react";
 import {getAllPosts} from "../utils/blog";
 import ToggleTheme from "../../ToggleTheme.tsx";
 import type {ToggleThemeProps} from "../../types.ts";
@@ -11,7 +11,14 @@ function BlogIndexPage({switchTheme}: ToggleThemeProps) {
 
         <div className="space-y-6 md:w-200 mx-auto">
             <div className=" border-b border-b-gray-600  py-8 backdrop-blur-sm">
-                <div className="flex items-start justify-between">
+                <Link
+                    to="/"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:dark:text-foreground hover:text-gray-800"
+                >
+                    <ArrowLeft className="h-4 w-4" />
+                    Back to home
+                </Link>
+                <div className="flex items-start justify-between mt-4">
 
                 <h2 className="flex items-center gap-3 font-display text-3xl font-bold dark:text-foreground w-full">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-foreground">

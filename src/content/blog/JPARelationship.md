@@ -5,7 +5,6 @@ excerpt: "How to define the relationship between entities in JPA, and the annota
 tags: ["JPA Entity Relationship", "Cascading", "OrphanRemoval", "mappedBy", "JoinColumn"]
 ---
 
-# JPA Relationship between Entity
 There is two ways of the directions of the entity relationship:
  1. Unidirectional - 
     * Only one class has the reference field pointing to the other class.

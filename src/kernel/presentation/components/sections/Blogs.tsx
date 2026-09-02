@@ -30,9 +30,9 @@ const Blogs = () => {
                          <div id={`${index}`} key={post.title}
                               className="flex items-center justify-between dark:bg-gray-500/10 bg-black/10 p-2 rounded-lg hover:-translate-y-1 transition-all ease-in-out border border-black/10 dark:border-white/10 hover:border-primary"
                          >
-                             <div className="">
+                             <div className="w-full">
                                  <div className="flex items-center justify-between">
-                                     <h3 className="text-base w-[70%]">
+                                     <h3 className="text-base w-[65%] truncate">
                                          {post.title}
                                      </h3>
                                      <span className="inline-flex items-center gap-1.5 text-xs dark:text-muted-foreground">
@@ -40,25 +40,25 @@ const Blogs = () => {
                                          {post.date}
                                     </span>
                                  </div>
-                                 <div className="mt-4 flex flex-wrap items-center gap-4 text-xs dark:text-muted-foreground">
+                                 <div className="my-2 flex flex-wrap items-center gap-4 text-xs dark:text-muted-foreground w-full">
 
 
                                         <span className="inline-flex items-center gap-1.5">
                                              <Clock className="h-3.5 w-3.5 dark:text-primary"/>
                                             {post.readingTime} min read
                                          </span>
-                                     <div className="flex gap-1.5">
+                                     <div className="flex gap-1.5 overflow-x-scroll w-full no-scrollbar ">
                                          {post.tags.map((tag) => (
                                              <span
                                                  key={tag}
-                                                 className="rounded-full bg-accent px-2 py-0.5 font-mono text-[11px] text-accent-foreground"
+                                                 className="rounded-full w-max text-nowrap bg-accent px-2 py-0.5 font-mono text-[11px] text-accent-foreground"
                                              >
                                                       {tag}
                                                 </span>
                                          ))}
                                      </div>
                                  </div>
-                                 <p className="text-xs dark:text-white/40 text-black/40 mt-1">
+                                 <p className="text-xs dark:text-white/40 text-black/40 mt-1 line-clamp-2">
                                      {post.excerpt}
                                  </p>
                              </div>

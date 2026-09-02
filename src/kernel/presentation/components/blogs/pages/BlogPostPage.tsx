@@ -31,7 +31,7 @@ function BlogPostPage({switchTheme}: ToggleThemeProps) {
     }
 
     return (
-        <article className="mx-auto max-w-3xl flex flex-col gap-4 md:w-200">
+        <article className="mx-auto max-w-5xl flex flex-col gap-4 md:w-240">
             <div className="flex items-start justify-between">
                 <Link
                     to="/blogs"
@@ -66,7 +66,7 @@ function BlogPostPage({switchTheme}: ToggleThemeProps) {
                         {post.readingTime} min read
                     </span>
 
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 flex-wrap">
                         {post.tags.map((tag) => (
                             <span
                                 key={tag}

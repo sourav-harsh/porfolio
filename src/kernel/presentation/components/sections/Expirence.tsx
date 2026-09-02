@@ -19,7 +19,7 @@ function Expirence() {
                     <h4>- {totalExperience} Yrs</h4>
                 </div>
             </div>
-            <div className="mt-2 flex flex-col gap-4 pl-1.5 w-full h-60 overflow-y-scroll">
+            <div className="mt-2 flex flex-col gap-4 pl-1.5 w-full h-60 overflow-y-scroll no-scrollbar">
                 <div className="flex gap-4">
                     <div className="w-[0.8px] rounded-xl dark:bg-gray-300/20 bg-gray-800"></div>
                     <div className="flex flex-col gap-5 w-full" id="experience">

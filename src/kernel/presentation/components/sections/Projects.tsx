@@ -15,7 +15,7 @@ function Projects() {
                         <h4>({info.projects?.length})</h4>
                     </div>
                 </div>
-                <div className="mt-2 flex flex-col gap-3 h-[22.6rem] overflow-y-scroll pt-2">
+                <div className="mt-2 flex flex-col gap-3 h-[22.6rem] overflow-y-scroll pt-2 no-scrollbar">
                     {info.projects?.map((project, index) =>
                         (
 

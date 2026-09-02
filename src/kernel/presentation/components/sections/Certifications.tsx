@@ -14,7 +14,7 @@ function Certifications() {
                         <h4>({info.certificates?.length})</h4>
                     </div>
                 </div>
-                <div className="mt-2 flex flex-col gap-2 h-80 overflow-y-scroll pt-2">
+                <div className="mt-2 flex flex-col gap-2 h-80 overflow-y-scroll pt-2 no-scrollbar">
                     {info.certificates?.map((social, index) =>
                         (
                             <a href={social.link} target="_blank" rel="noreferrer" key={social.title}>

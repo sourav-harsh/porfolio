@@ -9,7 +9,7 @@ function BlogIndexPage({switchTheme}: ToggleThemeProps) {
 
     return (
 
-        <div className="space-y-6 md:w-200 mx-auto">
+        <div className="space-y-6 md:w-240 mx-auto">
             <div className=" border-b border-b-gray-600  py-8 backdrop-blur-sm">
                 <Link
                     to="/"
@@ -61,7 +61,7 @@ function BlogIndexPage({switchTheme}: ToggleThemeProps) {
                                 {post.readingTime} min read
               </span>
 
-                            <div className="flex gap-1.5">
+                            <div className="flex gap-1.5 flex-wrap">
                                 {post.tags.map((tag) => (
                                     <span
                                         key={tag}

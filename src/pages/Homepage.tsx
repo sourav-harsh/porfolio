@@ -23,7 +23,7 @@ function Homepage() {
             <div>
                 <div className="w-full">
                     <div className="md:flex md:items-center md:justify-center w-full">
-                        <div className="md:w-[50rem] h-full rounded-2xl">
+                        <div className="md:w-[60rem] h-full rounded-2xl">
                             <div
                                 className="md:grid md:grid-cols-2 md:gap-3.5 md:items-stretch md:justify-stretch dark:text-white text-black">
                                 <div className="col-span-2 row-span-2">

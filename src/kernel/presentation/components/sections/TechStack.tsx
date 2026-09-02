@@ -17,7 +17,7 @@ function TechStack() {
                         <h4>(40)</h4>
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 mt-2 h-[20.5rem] overflow-y-scroll">
+                <div className="flex flex-col gap-2 mt-2 h-[20.5rem] overflow-y-scroll no-scrollbar">
                     <ProgramLang/>
                     <BackendTech/>
                     <FrontedTech/>

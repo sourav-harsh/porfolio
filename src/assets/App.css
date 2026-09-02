@@ -46,6 +46,7 @@
     --color-input: var(--input);
     --color-ring: var(--ring);
     --color-glow: var(--glow);
+    --color-table-border: var(--table-border);
 
 }
 
@@ -89,10 +90,12 @@
     --input: oklch(1 0 0 / 14%);
     --ring: oklch(0.78 0.13 215);
     --glow: oklch(0.78 0.13 215 / 18%);
+    --table-border: #000;
 }
 
 .dark{
     --foreground: oklch(0.95 0.008 250);
+    --table-border: oklch(1 0 0 / 10%);
 }
 
 /* Blog prose styling */
@@ -179,5 +182,30 @@
     & hr {
         border-color: var(--color-border);
         margin: 2rem 0;
+    } &  td {
+              border: 1px solid var(--color-table-border);
+              padding: 8px;
     }
+    & th {
+        background-color: #000;
+        color: var(--color-primary);
+        border: 1px solid var(--color-table-border);
+        padding: 8px;
+    }
+    & table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+}
+
+/* Target element */
+.no-scrollbar {
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }

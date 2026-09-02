@@ -1,10 +1,9 @@
-----
+---
 title: "N+1 Query Problem."
 date: "2026-09-02"
 excerpt: "The N+1 Query Problem is a common issue in database access where a query is executed N times, leading to performance issues."
 tags: ["N+1 Query Problem", "Join Fetch", "@EntityGraph", "@BatchSize", "DTO Projections"]
-
-----
+---
 
 #  N+1 Query Problem
 

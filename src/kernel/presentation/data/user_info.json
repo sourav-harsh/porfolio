@@ -78,7 +78,17 @@
       "link": "https://youtub-client-clone.vercel.app",
       "isDemoDisabled": false,
       "isRepoDisabled": false
-    },{
+    },
+    {
+      "title": "DSA Visualization Project",
+      "description": "Learn data structures, algorithms and system design with step-by-step animations, worked examples and complexity notes.",
+      "technologies": "React, Tailwind",
+      "github": "https://github.com/sourav-harsh/DSA_VisuLearn",
+      "link": "https://dsa-visu-learn.vercel.app/",
+      "isDemoDisabled": false,
+      "isRepoDisabled": false
+    }
+  ,{
       "title": "Pipeline Builder",
       "description": "Developed to learn full-stack web development using ReactJS and FastAPI. It will check is there and DAG in the graph and tell you the node and edge.",
       "technologies": "React, Tailwind, FastAPI",

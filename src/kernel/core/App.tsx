@@ -64,7 +64,7 @@ function App() {
         },
         "detectRetina": true,
         "duration": 0,
-        "fpsLimit": 220,
+        "fpsLimit": 420,
         "manualParticles": [],
         "particles": {
             "bounce": {

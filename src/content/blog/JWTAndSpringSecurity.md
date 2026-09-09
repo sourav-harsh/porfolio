@@ -2,7 +2,7 @@
 title: "JWT & Spring Security."
 date: "2026-09-07"
 excerpt: "How the JWT and Spring Security works in terms of authentication and authorization."
-tags: ["JWT", "Spring Security"]
+tags: ["JWT", "Spring Security","Authentication Filter flow","SecurityContext Holder","ThreadLocal","Authentication Object"]
 ---
 
 ## How the JWT signature is generated?
@@ -133,6 +133,23 @@ While ThreadLocal is the default behavior, SecurityContextHolder can be configur
 * MODE_THREADLOCAL (Default): Tied to a single thread. Perfect for traditional web applications.
 * MODE_INHERITABLETHREADLOCAL: Allows child threads spawned from a secure thread to inherit the same security context. Useful if you use @Async methods.
 * MODE_GLOBAL: All threads in the JVM share the same context. Used primarily for standalone desktop applications (like a Swing or JavaFX app).
+
+#### ThreadLocal
+
+Thread-Local Storage (TLS) is a memory management method that allows each thread in a multithreaded program to have its own unique, private copy of a variable.
+
+#### Under the Hood: How it Works
+
+At the operating system and hardware level, TLS relies on specific architecture tricks:
+
+* The Pointer Register: On many modern CPUs, a specific register (like the FS or GS segment register on x86, or a dedicated thread pointer register on RISC architectures) is reserved to point to the current thread's specific data structures.
+* The Allocation: When a new thread is created, the operating system or runtime environment allocates a block of memory for that thread's TLS variables. When the compiler encounters a thread-local variable in your code, it calculates an offset relative to that thread pointer register to access the correct isolated memory slot.
+
+| Memory Type       | Scope(Where it can be seen)                 | Lifetime(How long it lasts                     | Multi-threading Behaviour                                     |
+|-------------------|---------------------------------------------|------------------------------------------------|---------------------------------------------------------------|
+| Global/Static     | Visible to the entire program               | Persists for the program's entire run          | Shared: All threads read/write the exact same memeory address |
+| Stack(Local)      | Visible only inside its specific function   | Destroyed as soon as the function returns      | Private: Each function call gets its own stack frame.         |
+| Thread-Local(TLS) | Visible globally(for across the file/scope) | Persists for the entire lifetime of the thread | Isolated: Each thread gets a unique, persistent copy.         |
 
 ### What is authentication object?
 

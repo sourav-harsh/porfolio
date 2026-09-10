@@ -154,3 +154,15 @@ Thread and connection exhaustion occur when an application runs out of reusable 
 * Enforce Timeouts: Add aggressive connect and read timeouts for all external HTTP clients and database queries so threads release quickly instead of waiting forever.
 * Adopt Non-Blocking/Reactive I/O: Use asynchronous or reactive programming models where appropriate to handle high concurrency without locking up a dedicated thread per request.
 * Monitor Queue Depth & Wait Times: Track active vs. maximum threads, queue length, and thread wait times rather than just looking at CPU and memory metrics.
+
+## Microservice disadvantages and trade-offs?
+
+Microservices architecture trades the simplicity of a single monolithic application for the operational independence of multiple smaller services.
+
+### Key Disadvantages and Trade-offs
+
+* Increased Operational Complexity: Managing dozens or hundreds of independent services requires advanced DevOps infrastructure, automated deployment pipelines, and continuous monitoring tools that a monolith does not need.
+* Distributed System Overheads: Network communication replaces in-process function calls, introducing potential network latency, bandwidth consumption, and cascading failures when a remote service is slow or unreachable.
+* Data Management and Consistency Challenges: Because each microservice typically manages its own private database, executing cross-service transactions requires complex patterns like Eventual Consistency rather than standard ACID database transactions.
+* Testing and Debugging Difficulties: Integration testing requires spinning up multiple dependent services and test environments, while debugging a single user request means parsing separate logs spread across different machines (requiring distributed tracing).
+* Higher Resource and Financial Costs: Each microservice runs in its own isolated runtime environment and consumes dedicated compute, memory, and storage resources, raising baseline infrastructure costs

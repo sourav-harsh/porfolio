@@ -1,8 +1,8 @@
 ---
-title: "JPA Query Optimization, Projection & Database Indexing ."
+title: "JPA Query Optimization, Projection & Database Indexing."
 date: "2026-09-10"
-excerpt: ""
-tags: []
+excerpt: "Understanding the use of JPA Query Optimization, Projection & Database Indexing."
+tags: ["JPQL","Query Optimization","Ways of Projection","DTO Projection","Interface based projection","Dynamic Projection","Database Indexing","Composite Index","EXPLAIN And EXPLAIN ANALYZE","Deployment strategies","Blue-green deployment","Canary deployment"]
 ---
 ## What is jpql in spring boot?
 
@@ -299,40 +299,6 @@ EXPLAIN and EXPLAIN ANALYZE are database commands used to inspect and troublesho
 * Details provided: Actual execution time per step, actual rows processed, and comparison against the planner's initial estimates.
 * Safety: Use caution. Because it actually runs the query, write operations (like UPDATE or DELETE) will modify data unless wrapped in a transaction rollback.
 * Use case: Deep performance profiling to find exact time bottlenecks and compare real rows versus estimated rows.
-
-
-## Caching strategies
-
-Redis is a powerful in-memory data store commonly used to implement distributed caching and dramatically reduce application latency.
-
-### Core Caching Patterns
-
-* Cache-Aside (Lazy Loading): The application checks Redis first; on a cache miss, it fetches data from the primary database, populates the cache, and returns the result. Best for read-heavy workloads.
-* Write-Through: The application writes data to the cache and the primary database simultaneously in a synchronous operation, favoring strong data consistency.
-* Write-Behind (Write-Back): The application writes directly to Redis first, and Redis asynchronously updates the backend database in the background. Ideal for write-heavy workloads, though it introduces minor durability risks.
-* Cache Prefetching: Data is proactively loaded or updated in Redis ahead of anticipated user requests to eliminate initial cache misses.
-
-### Production Best Practices
-
-* Set TTLs (Time-To-Live): Always assign expiration times to keys to prevent Redis memory from growing unbounded, and add jitter to prevent synchronized cache-miss storms.
-* Eviction Policies: Configure appropriate memory management, such as allkeys-lru (Least Recently Used), to automatically discard older data when memory fills up.
-* Handle Hot Keys: Protect high-traffic keys from causing cache stampedes by using mutex locks or background refresh mechanisms.
-
-## When caching is appropriate.
-Caching is appropriate when data is read frequently, changes slowly, or requires expensive computations to generate
-
-### When Caching Works Best
-
-* High Read-to-Write Ratio: Data is requested many times more often than it is updated, such as user profiles or product catalogs.
-* Static and Stable Content: Files or records remain relatively static, including images, stylesheets, JavaScript, or reference data.
-* Expensive Computations: Results of complex aggregations, database queries, or heavy computations that take significant CPU time to process.
-* Latency-Sensitive Needs: Real-time applications or high-traffic sites where reducing response time improves user experience and protects backend databases from traffic spikes.
-
-### When to Avoid Caching
-
-* Frequently Changing Data: Real-time data or information with a high write-to-read ratio leads to constant cache invalidation overhead.
-* Strict Consistency Requirements: Systems that cannot tolerate stale data or delayed synchronization should query the source of truth directly.
-
 
 ## Index maintenance overhead during INSERT/UPDATE operations.
 

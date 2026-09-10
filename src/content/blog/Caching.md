@@ -1,8 +1,8 @@
 ---
 title: "Caching in Spring Boot."
 date: "2026-09-08"
-excerpt: "How the JWT and Spring Security works in terms of authentication and authorization."
-tags: []
+excerpt: "Complete understanding of caching in Spring Boot."
+tags: ["Cache Stamping", "Cache Penetration","Caching strategies"]
 ---
 
 ## Cache Stamping
@@ -37,3 +37,35 @@ Cache penetration happens when an application requests data that does not exist 
 
 * Cache Null/Empty Values: Store a temporary null or placeholder value for missing keys in your cache with a short Time-To-Live (TTL). Future requests for the same fake ID hit the cache instead of the database.
 * Use a Bloom Filter: Place a memory-efficient probabilistic data structure (a Bloom filter) in front of your cache. It tracks all valid keys that actually exist in the database. If the filter says a key is missing, your app rejects the request immediately without touching the database or cache.
+
+## Caching strategies
+
+Redis is a powerful in-memory data store commonly used to implement distributed caching and dramatically reduce application latency.
+
+### Core Caching Patterns
+
+* Cache-Aside (Lazy Loading): The application checks Redis first; on a cache miss, it fetches data from the primary database, populates the cache, and returns the result. Best for read-heavy workloads.
+* Write-Through: The application writes data to the cache and the primary database simultaneously in a synchronous operation, favoring strong data consistency.
+* Write-Behind (Write-Back): The application writes directly to Redis first, and Redis asynchronously updates the backend database in the background. Ideal for write-heavy workloads, though it introduces minor durability risks.
+* Cache Prefetching: Data is proactively loaded or updated in Redis ahead of anticipated user requests to eliminate initial cache misses.
+
+### Production Best Practices
+
+* Set TTLs (Time-To-Live): Always assign expiration times to keys to prevent Redis memory from growing unbounded, and add jitter to prevent synchronized cache-miss storms.
+* Eviction Policies: Configure appropriate memory management, such as allkeys-lru (Least Recently Used), to automatically discard older data when memory fills up.
+* Handle Hot Keys: Protect high-traffic keys from causing cache stampedes by using mutex locks or background refresh mechanisms.
+
+## When caching is appropriate.
+Caching is appropriate when data is read frequently, changes slowly, or requires expensive computations to generate
+
+### When Caching Works Best
+
+* High Read-to-Write Ratio: Data is requested many times more often than it is updated, such as user profiles or product catalogs.
+* Static and Stable Content: Files or records remain relatively static, including images, stylesheets, JavaScript, or reference data.
+* Expensive Computations: Results of complex aggregations, database queries, or heavy computations that take significant CPU time to process.
+* Latency-Sensitive Needs: Real-time applications or high-traffic sites where reducing response time improves user experience and protects backend databases from traffic spikes.
+
+### When to Avoid Caching
+
+* Frequently Changing Data: Real-time data or information with a high write-to-read ratio leads to constant cache invalidation overhead.
+* Strict Consistency Requirements: Systems that cannot tolerate stale data or delayed synchronization should query the source of truth directly.

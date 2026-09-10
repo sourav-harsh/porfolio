@@ -1,8 +1,8 @@
 ---
 title: "Webhooks, Kafka & Transactional Outbox."
 date: "2026-09-09"
-excerpt: ""
-tags: []
+excerpt: "Understanding the use of webhooks, Kafka, and Transactional Outbox."
+tags: ["Webhooks","Consumer Acknowledgement in Kafka","Failure Modes in Event Driven Architecture","The Thundering Herd","Poison Pill","Split Brain Problem","The Chronological Nightmare","The System Feedback Loop","Offset Commit in Kafka","Transactional Outbox"]
 ---
 
 ## What a webhook is and why it is used?

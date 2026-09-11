@@ -183,3 +183,127 @@ A Hibernate LazyInitializationException is caused by attempting to access a lazi
 | 4. N+1 Fix           : Use 'JOIN FETCH' in JPQL or @EntityGraph.                    |
 | 5. Pagination Warning: NEVER use 'JOIN FETCH' on @OneToMany with Pageable!          |
 | 6. REST Controllers  : NEVER return Entities directly. Always map to DTOs.          |
+
+## `@OrderBy` Vs `@OrderColumn`
+
+### 1. @OrderBy Example (Logical Sorting)
+
+Use this when your data has a natural property (like a date or name) that dictates the order.
+
+```java
+@Entity
+public class User {
+    @Id @GeneratedValue
+    private Long id;
+
+    // Sorts the List at retrieval time based on the 'createdDate' property of Post
+    @OneToMany(mappedBy = "user")
+    @OrderBy("createdDate DESC") 
+    private List<Post> posts = new ArrayList<>();
+}
+
+@Entity
+public class Post {
+    @Id @GeneratedValue
+    private Long id;
+    
+    private String content;
+    private LocalDateTime createdDate; // Field used for sorting
+    
+    @ManyToOne
+    private User user;
+}
+
+```
+
+### Database Table Schema
+No special columns are created. The database tables look exactly like a standard relationship.
+
+```text
+Table: POST
++----+---------+---------------------+---------+
+
+| id | content | created_date        | user_id |
++----+---------+---------------------+---------+
+
+| 1  | Hello!  | 2026-09-11 10:00:00 | 100     |
+| 2  | Update  | 2026-09-11 11:30:00 | 100     |
++----+---------+---------------------+---------+
+
+```
+
+### Database Query Effect
+
+Whenever you fetch user.getPosts(), Hibernate appends a standard SQL ORDER BY clause:
+```sql
+SELECT id, content, created_date, user_id 
+FROM post 
+WHERE user_id = 100 
+ORDER BY created_date DESC; -- Appended dynamically
+
+```
+
+### 2. @OrderColumn Example (Positional Indexing)
+
+Use this when the position of the element in the List must be explicitly remembered, completely independent of the element's actual properties (e.g., a custom playlist where a user drag-and-drops tracks).
+
+```java
+@Entity
+public class Playlist {
+    @Id @GeneratedValue
+    private Long id;
+
+    // Forces Hibernate to maintain a dedicated position column in the Song table
+    @OneToMany(mappedBy = "playlist")
+    @OrderColumn(name = "song_order") 
+    private List<Song> songs = new ArrayList<>();
+}
+
+@Entity
+public class Song {
+    @Id @GeneratedValue
+    private Long id;
+    
+    private String title;
+    
+    @ManyToOne
+    private Playlist playlist;
+}
+
+```
+
+### Database Table Schema
+Hibernate adds a hidden integer column (song_order) to the child table to store the List index (0, 1, 2...).
+
+```text
+Table: SONG
++----+-----------+-------------+------------+
+
+| id | title     | playlist_id | song_order |  <-- Extra column managed by JPA
++----+-----------+-------------+------------+
+
+| 55 | Song A    | 200         | 0          |  (Index 0 in List)
+| 89 | Song B    | 200         | 1          |  (Index 1 in List)
++----+-----------+-------------+------------+
+
+```
+
+### Database Query Effect
+
+When fetching the collection, Hibernate pulls the rows ordered by that hidden index:
+
+```sql
+SELECT id, title, playlist_id, song_order 
+FROM song 
+WHERE playlist_id = 200 
+ORDER BY song_order ASC; -- Queries by index column
+
+```
+### The Side Effect: Data Mutations
+If you have 5 songs in your playlist and delete the one at index 1 (song_order = 1), Hibernate has to keep the list contiguous. It will trigger extra database writes to shift the indices of remaining songs:
+
+```sql
+-- Triggered automatically to heal the index gaps
+UPDATE song SET song_order = 1 WHERE id = 89;
+
+```

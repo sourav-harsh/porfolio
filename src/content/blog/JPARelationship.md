@@ -2,7 +2,7 @@
 title: "JPA Relationship between Entity."
 date: "2026-08-28"
 excerpt: "How to define the relationship between entities in JPA, and the annotations used for it."
-tags: ["JPA Entity Relationship", "Cascading", "OrphanRemoval", "mappedBy", "JoinColumn","LazyInitializationException"]
+tags: ["JPA Entity Relationship", "Cascading", "OrphanRemoval", "mappedBy", "JoinColumn","LazyInitializationException","@OrderBy","@OrderColumn"]
 ---
 
 There is two ways of the directions of the entity relationship:

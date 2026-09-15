@@ -188,3 +188,21 @@ Measuring performance improvement in a Spring Boot application requires tracking
 * Rate (Throughput): Monitors the number of requests or transactions processed per second or minute. Track this using Micrometer Counter objects.
 * Errors: Tracks the percentage or total count of failed requests and exceptions thrown during service execution.
 * Resource Utilization: Evaluates JVM heap memory usage, Garbage Collection (GC) pauses, and HikariCP database connection pool metrics.
+
+---
+
+1. Why LazyInitializationException Happens
+   Marking a method @Transactional opens a Hibernate Session/EntityManager when entering the method and closes it upon exiting.
+
+Once the transaction completes, the Session unbinds from the thread, putting the Customer entity into a Detached state.
+
+Accessing customer.getOrders() outside @Transactional attempts to initialize an uninitialized lazy proxy without an active, open Session attached—triggering LazyInitializationException.
+
+2. Why Open Session in View (OSIV) is Dangerous
+   What OSIV does: It keeps the Hibernate Session open all the way through the Spring MVC Web layer until the response is fully serialized to JSON.
+
+The Production Hazard: A database connection from the HikariCP pool is held open for the entire duration of the HTTP request lifecycle (including network I/O, slow JSON rendering, or external third-party API calls). Under heavy concurrent load:
+
+Database connections are locked up waiting for web responses.
+
+The connection pool depletes rapidly, causing incoming requests to throw connection timeout exceptions.

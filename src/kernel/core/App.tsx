@@ -12,11 +12,17 @@ import {loadSlim} from "@tsparticles/slim";
 import type {ISourceOptions} from "@tsparticles/engine";
 import Footer from "../../kernel/presentation/components/sections/Footer.tsx";
 
+const {VITE_ENVIRONMENT} = import.meta.env;
+const PASSWORD_TO_OPEN = import.meta.env.VITE_PASSWORD_TO_OPEN;
+
 
 function App() {
     const savedTheme = localStorage.getItem('theme')
     const [theme, setTheme] = useState(savedTheme || 'dark')
     const [init, setInit] = useState(false);
+    const [password, setPassword] = useState("");
+    const [isProtected, setProtected] = useState(VITE_ENVIRONMENT === "dev");
+    const [error, setError] = useState("");
 
     useEffect(() => {
         document.documentElement.classList.toggle("dark", theme === "dark");
@@ -417,29 +423,80 @@ function App() {
         }
     }
 
+    const handleUnlock = () => {
+        if (password === PASSWORD_TO_OPEN) {
+            setProtected(false);
+            setError("");
+        } else {
+            setError("Incorrect password");
+        }
+    };
+
     return (
         <>
-            {init && <Particles
-                id="tsparticles"
-                className="w-full h-full"
-                options={option}
-            />}
-            <div
-                className="dark:bg-black bg-[#FFFDD0] dark:text-white text-black min-h-screen min-w-screen w-full bg-cover bg-center bg-no-repeat xl:p-5 p-3">
+            {isProtected ?
+                <>
+                    <div className="h-screen flex flex-col items-center justify-center">
+                        <h1 className="text-4xl font-bold mb-6">
+                            Protected
+                        </h1>
 
-                <AppContext1 value={{theme, switchTheme}}>
-                    <BrowserRouter>
-                        <Routes>
-                            <Route path="/" element={<Homepage/>}/>
-                            <Route path="*" element={<NotFound/>}/>
-                            <Route path="/blogs" element={<BlogIndexPage switchTheme={switchTheme}/>}/>
-                            <Route path="/blog/:slug" element={<BlogPostPage switchTheme={switchTheme}/>}/>
-                        </Routes>
-                        <Footer/>
-                    </BrowserRouter>
-                </AppContext1>
-            </div>
-            <Analytics/>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                    handleUnlock();
+                                }
+                            }}
+                            placeholder="Enter password"
+                            className="border p-3 rounded"
+                        />
+
+                        <button
+                            onClick={handleUnlock}
+                            className="mt-4 px-5 py-2 rounded bg-blue-500 text-white"
+                        >
+                            Unlock
+                        </button>
+
+                        {error && (
+                            <p className="mt-3 text-red-500">
+                                {error}
+                            </p>
+                        )}
+                    </div>
+                </> :
+
+                <>
+                    <>
+
+                        {init && <Particles
+                            id="tsparticles"
+                            className="w-full h-full"
+                            options={option}
+                        />}
+                        <div
+                            className="dark:bg-black bg-[#FFFDD0] dark:text-white text-black min-h-screen min-w-screen w-full bg-cover bg-center bg-no-repeat xl:p-5 p-3">
+
+                            <AppContext1 value={{theme, switchTheme}}>
+                                <BrowserRouter>
+                                    <Routes>
+                                        <Route path="/" element={<Homepage/>}/>
+                                        <Route path="*" element={<NotFound/>}/>
+                                        <Route path="/blogs" element={<BlogIndexPage switchTheme={switchTheme}/>}/>
+                                        <Route path="/blog/:slug" element={<BlogPostPage switchTheme={switchTheme}/>}/>
+                                    </Routes>
+                                    <Footer/>
+                                </BrowserRouter>
+                            </AppContext1>
+                        </div>
+                    </>
+                    <Analytics/>
+                </>
+            }
+
         </>
     )
 }

@@ -1,4 +1,10 @@
-# SQL & Database Internals
+---
+title: "SQL & Database Internals"
+date: "2026-10-06"
+excerpt: "SQL & Database Internals"
+tags: ["SQL", "Database", "Inner Join", "Left Join", "Window Functions", "Aggregates Functions", "Dense Rank", "Rank", "Index Type", "BTree", "TID", "Fuzzy Read","Phantom Read","PostgreSQL Deadlock resolve","UPDATE Internals","Autovacuum","Table Bloat"]
+visible: true
+---
 
 * Three-Valued Logic ($TRUE$, $FALSE$, $UNKNOWN$): The WHERE clause filters out any row where the condition does NOT evaluate strictly to $TRUE$. If a condition evaluates to $UNKNOWN$, it is treated as $FALSE$ by the WHERE clause filter.
 * EXISTS vs IN with NULLs: EXISTS operates on set emptiness (does the inner query return any rows?), whereas IN operates on scalar equality checks (=). Because EXISTS cares only about whether at least one tuple is returned, it completely avoids the three-valued logic trap that breaks NOT IN.

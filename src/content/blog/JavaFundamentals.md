@@ -2,8 +2,8 @@
 title: "Java Fundamentals"
 date: "2026-09-20"
 excerpt: "Complete understanding Java Fundamentals."
-tags: []
-visible: false
+tags: ["JDK Internals", "About JIT", "String Immutability", "String Pool", "String Buffer", "String Builder", "Equals And HashCode", "Generics", "Exceptions", "Throw Vs Throws", "Interface VS Abstract Class", "About Static, Final, This, Super", "Java8 Features","Lambdas","Optional","Date Time Api","Core Classes","I/O Basics","Stream Type","Java NIO(I/O)","Multithreading","ThreadPool/ExecutorService","Runnable VS Callable","Concurrency","Synchronization","Locks","Atomic Classes","Future VS CompletableFuture","Concurrent Collections","JMM(Java Memory Model)","CAS(Compare-and-swap)","Virtual Threads","REST Principle","HTTP Headers","Cookies","TLS","HTTP1.1vsHTTP2vsHTTP3","Multiplexing","Resource Oriented Design","Uniform Interface","HATEOAS"]
+visible: true
 ---
 
 ## Complete JDK Internals

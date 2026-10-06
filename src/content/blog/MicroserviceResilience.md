@@ -3,6 +3,7 @@ title: "Microservice Resilience."
 date: "2026-09-09"
 excerpt: "Understanding the use of circuit breakers, timeouts, bulkheads, exponential backoff, fallback pattern, rate limiting, and load shedding in microservices."
 tags: ["Cascading Failures","Circuit Breaker","Timeouts","Bulkheads","Exponential Backoff","Fallback Pattern","Rate Limiting","Load Shedding","Limited Retry","Retry Stroms","Resource Isolation","Microservices Tradeoff"]
+visible: true
 ---
 
 ## What is cascading failures in microservices?

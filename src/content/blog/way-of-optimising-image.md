@@ -3,6 +3,7 @@ title: "Ways of optimising the image to increase load time."
 date: "2025-08-28"
 excerpt: "There are some ways to optimising the image to reduce LCP(Largest Contentful Paint,) timing. And increase the page loading, reloading timing."
 tags: ["img", "optimisation"]
+visible: true
 ---
 
 ## 1\. Thematic Images

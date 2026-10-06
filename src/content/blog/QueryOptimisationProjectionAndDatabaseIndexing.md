@@ -3,6 +3,7 @@ title: "JPA Query Optimization, Projection & Database Indexing."
 date: "2026-09-10"
 excerpt: "Understanding the use of JPA Query Optimization, Projection & Database Indexing."
 tags: ["JPQL","Query Optimization","Ways of Projection","DTO Projection","Interface based projection","Dynamic Projection","Database Indexing","Composite Index","EXPLAIN And EXPLAIN ANALYZE","Deployment strategies","Blue-green deployment","Canary deployment"]
+visible: true
 ---
 ## What is jpql in spring boot?
 

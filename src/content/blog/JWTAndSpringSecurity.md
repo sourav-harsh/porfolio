@@ -3,6 +3,7 @@ title: "JWT & Spring Security."
 date: "2026-09-07"
 excerpt: "How the JWT and Spring Security works in terms of authentication and authorization."
 tags: ["JWT","JWT Payload Tampering","Prevent JWT Token Forgery","Storage Strategy", "Spring Security","Authentication Filter flow","SecurityContext Holder","ThreadLocal","Authentication Object"]
+isVisible: true
 ---
 
 ## How the JWT signature is generated?

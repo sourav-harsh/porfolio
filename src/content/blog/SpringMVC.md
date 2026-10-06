@@ -3,6 +3,7 @@ title: "Spring MVC, Validation & Exception Handling."
 date: "2026-09-05"
 excerpt: "How to define the spring mvc, validation and exception handling."
 tags: ["@Valid", "@Validated", "@ControllerAdvice","@RestControllerAdvice", "@ExceptionHandler", "Custom Annotations","DTO vs Business Validation","ConstraintViolationException","Nested Validation","HTTP Status Code"]
+visible: true
 ---
 
 ## Why to use the `@Valid` at controller level?

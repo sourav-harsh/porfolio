@@ -3,6 +3,7 @@ title: "Transactional In Spring"
 date: "2026-09-03"
 excerpt: "In any real-world application, especially when interacting with databases, managing data integrity is crucial. Transactions allow us to ensure that a group of operations are executed in an "all-or-nothing" fashion. This means that if one operation fails, all changes made by other operations in the transaction should be rolled back, leaving the system in a consistent state."
 tags: ["Transaction Isolation","Transaction Propagation","Optimistic Locking","Pessimistic Locking","Dirty Check","Race Condition","Concurrency"]
+visible: true
 ---
 
 ## What is a Transaction?
@@ -239,3 +240,26 @@ Concurrent updates are a common cause of race conditions. When two users try to 
 * **Mutex Locks:** Use a mutual exclusion lock (Mutex) to block other threads from entering a critical section of code while one thread is working there
 * **Atomic Variables:** Use built-in atomic data types (like AtomicInteger in Java or Interlocked in C#) for simple counters and flags. These let the CPU update values safely without heavy locks
 * **Queue-Based Processing:** Send high-throughput updates, like payments or orders, into a message queue so a single worker processes them one by one
+
+
+## Dirty checks internal mechanism
+
+```text
+1. Transaction Starts (@Transactional)
+     └── Connection opened & Hibernate Session created
+
+  2. User user = userRepository.findById(1L)
+     ├── Executes SELECT query
+     ├── Loads User instance into 1st-Level Cache (Persistence Context)
+     └── Hydrates an internal Object[] snapshot copy of all entity properties
+
+  3. user.setEmail("new@email.com")
+     └── Entity state mutated in JVM heap
+
+  4. Transaction Completes (TransactionInterceptor)
+     ├── Session.flush() triggered BEFORE commit
+     ├── Comparator loops through current entity fields vs. original snapshot
+     ├── Detects "email" field mismatch -> Registers Dirty Entity
+     ├── Auto-generates UPDATE user SET email=? WHERE id=?
+     └── JDBC PreparedStatement executed -> DB Transaction Committed
+```

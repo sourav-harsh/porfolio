@@ -7,6 +7,7 @@ export type BlogPostMeta = {
   excerpt: string;
   tags: string[];
   readingTime: number;
+  visible: boolean;
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -57,6 +58,7 @@ function parseMarkdown(raw: string): MarkdownFile {
         excerpt: "",
         tags: [],
         readingTime: 1,
+        visible: false,
       },
       content: raw,
     };
@@ -107,6 +109,7 @@ function parseMarkdown(raw: string): MarkdownFile {
         ? data.tags.map(String)
         : [],
     readingTime: Math.max(1, Math.ceil(words / 200)),
+    visible: data.visible == 'true',
   };
 
   return {
@@ -115,8 +118,12 @@ function parseMarkdown(raw: string): MarkdownFile {
   };
 }
 
+
+// Load a post from the path and raw content
 function loadPost(path: string, raw: string): BlogPost {
   const parsed = parseMarkdown(raw);
+
+  // console.log(parsed)
 
   const slug = getSlug(path);
 
@@ -136,6 +143,7 @@ function loadPost(path: string, raw: string): BlogPost {
  * Get all blog posts.
  */
 export function getAllPosts(): BlogPostMeta[] {
+
   return Object.entries(markdownFiles)
       .map(([path, raw]) => {
         const post = loadPost(path, raw);
@@ -147,8 +155,10 @@ export function getAllPosts(): BlogPostMeta[] {
           excerpt: post.excerpt,
           tags: post.tags,
           readingTime: post.readingTime,
+          visible: post.visible,
         };
       })
+      .filter((post) => post.visible)
       .sort((a, b) => b.date.localeCompare(a.date));
 }
 

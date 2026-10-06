@@ -3,6 +3,7 @@ title: "Starting my journey blog"
 date: "2026-08-28"
 excerpt: "Why I'm starting to write about my journey as a software engineer — the systems I build, the mistakes I make, and what I learn along the way."
 tags: ["journey", "meta"]
+visible: true
 ---
 
 Welcome to my blog. I've been building software for a few years now — microservices, event-driven pipelines, full-stack apps — and most of what I've learned lives in my head or in commit messages nobody reads. This blog is my attempt to change that.

@@ -9,7 +9,7 @@
     "learningGoalBtn": "Learning Goal",
     "sendMailBtnTxt": "Send Mail",
     "resumeBtnTxt": "Download Resume",
-    "resumeLink": "https://drive.google.com/file/d/1Vrb62wvpqbWTzkAJLoxmW0uPAMqKxSK3/view?usp=sharing",
+    "resumeLink": "https://drive.google.com/file/d/1cR3nCwJwdxVzJGIvgwxxd2D7wHDeFbmq/view?usp=sharing",
     "futureLearningSubTitle": "Areas I focus on to design and deliver robust applications, covering frontend, backend, database management, AI integration, workflow automation, and scalable deployments.",
     "futureLearning": [
       {
@@ -26,11 +26,6 @@
   },
   "socials": [
     {
-      "icon": "FaXTwitter",
-      "title": "X",
-      "url": "https://x.com/ItsSourav2901"
-    },
-    {
       "icon": "FaGithub",
       "title": "GitHub",
       "url": "https://github.com/sourav-harsh"
@@ -42,7 +37,11 @@
     },{
       "icon": "TbBrandLeetcode",
       "title": "LeetCode",
-      "url": "https://leetcode.com/u/rahe_rahe/"
+      "url": "https://leetcode.com/u/sourav-harsh/"
+    }, {
+      "icon": "FaXTwitter",
+      "title": "X",
+      "url": "https://x.com/ItsSourav2901"
     }
   ],
   "projects": [
@@ -228,8 +227,8 @@
       "image": "ccci.webp",
       "descriptions": [
         "Designed and shipped microservices-based backend systems using Spring Boot, Kafka, and PostgreSQL.",
-        "Built event-driven processing pipelines that keep heavy workloads off the request path.",
-        "Implemented secure authentication and authorization with JWT, OAuth, and role-based access control.",
+        "Engineered event-driven asynchronous processing pipelines using Apache Kafka and RabbitMQ, reducing API response latency by 35%.",
+        "Engineered resilient backend infrastructure using circuit breakers, retry mechanisms, global exception handling, request\nvalidation, and JWT-based authentication, reducing endpoint failures by 40% and improving overall service reliability.",
         "Contributed to system design decisions across caching, messaging, and distributed data layers."
       ]
     }

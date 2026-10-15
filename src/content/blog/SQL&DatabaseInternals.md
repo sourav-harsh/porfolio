@@ -169,3 +169,10 @@ When `UPDATE users SET status = 'ACTIVE' WHERE id = 42'` executes:
 * Dead Tuple: A tuple where xmax is set and lower than any active transaction's snapshot horizon. No running or future transaction can ever see it.
 * Autovacuum Worker: A background daemon that scans heap and index pages, marks space occupied by dead tuples as reusable in the Free Space Map(FSM), and updates the Visibility Map(VM).
 * Table & Index Bloat: VACUUM usually does not shrink the physical file size on disk or return space to the OS; it merely marks space within the 8KB page as reusable for future INSERT. If Autovacuum falls behind or is blocked by long-running transactions, dead tuples accumulated across thousands of pages.Queries must read those dead pages into memory anyway, causing severe query degradation and high disk I/O. 
+
+## Eventual Consistency(Stale Read)
+
+While the system model is eventual consistency, the specific consistency anomaly experienced by the user is formally called Stale Read(violating Read-Your-Own-Writes Consistency or Monotonic Read Consistency)
+
+One of the fixes is: Session-Based/ Causal Routing: Missed mentioning Sticky Sessions(routing a user's reads to the Primary node for X seconds immediatley after they perform a write, while keeping all other passive user on Replicas).
+

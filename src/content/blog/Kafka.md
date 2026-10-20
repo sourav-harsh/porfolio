@@ -347,3 +347,4 @@ When Broker A recovers:
   * org.apache.kafka.common.errors.NotEnoughReplicasException or NotEnoughReplicasAfterAppendException.
 
 
+

@@ -1,5 +1,9 @@
 ---
-visible: false
+title: "Small Concepts"
+date: "2026-10-06"
+excerpt: "Small concepts which i learned on the fly of doing some works,So read about it and scribed it"
+tags: ["Compile-time resolution", "Run-time resolution","Static Method hiding","Field Hiding","String Intern","Object Equals and Hashcode","HashMap","Exceptions & Control Flow","Actual JVM behavior on Thread creation","Variable Increment in JVM","Volatile Keyword","SpringBoot start", "Full vs Lite Configuration Mode", "AutoConfiguration","Spring Manages Database","Transaction","Thread safe variable","Spring MVC Lifecycle Internals","OutOfMemeoryError(Memory Leak) Investigation","ThreadPoolExecutor Load Expansion","@Async using in SecurityContext holder"]
+visible: true
 ---
 
 # My Learning
@@ -411,7 +415,7 @@ HTTP POST /api/orders
   HTTP 200 OK (JSON Payload returned to Client)
 ```
 
-## OutOfMemeoryErro(Memory Leak) Investigation
+## OutOfMemeoryError(Memory Leak) Investigation
  Why is Hibernate's First-Level Cache (Persistence Context) causing an OutOfMemoryError in this batch process?Why does keeping @Transactional open for the entire duration of a 500,000-record batch processing method paralyze JVM heap memory?How would you refactor this batch service to run cleanly in production with constant $O(1)$ memory consumption?
 
 
